@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52af2c58-93c1-4d37-9e08-52382a38e5d4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/ValuesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/DbContext/IUserContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/DbContext/UserContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Enums/Sexes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/ModelBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunder.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunder.sln" afterDir="false" />
-    </list>
+    <list default="true" id="52af2c58-93c1-4d37-9e08-52382a38e5d4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,28 +61,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserContext.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Model/DbContext/UserContext.cs">
+      <file leaf-file-name="TunderDbContext.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Model/DbContext/TunderDbContext.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="77" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
+              <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
               <folding>
-                <marker date="1538007687000" expanded="true" signature="70:388" ph="{...}" />
-                <marker date="1538007687000" expanded="true" signature="157:386" ph="{...}" />
-                <marker date="1538007687000" expanded="true" signature="297:380" ph="{...}" />
+                <marker date="1538007920000" expanded="true" signature="70:396" ph="{...}" />
+                <marker date="1538007920000" expanded="true" signature="165:394" ph="{...}" />
+                <marker date="1538007920000" expanded="true" signature="305:388" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IUserContext.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Model/DbContext/IUserContext.cs">
+      <file leaf-file-name="IThunderDbContext.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/DbContext/IThunderDbContext.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="60">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
               <folding>
-                <marker date="1538007700000" expanded="true" signature="70:161" ph="{...}" />
-                <marker date="1538007700000" expanded="true" signature="107:159" ph="{...}" />
+                <marker date="1538007875000" expanded="true" signature="70:165" ph="{...}" />
+                <marker date="1538007875000" expanded="true" signature="111:163" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -126,9 +112,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Model/DbContext/UserContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Model/DbContext/TunderDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/ValuesController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Model/DbContext/IUserContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Model/DbContext/IThunderDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Model/ModelBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Model/User.cs" root0="FORCE_HIGHLIGHTING" />
@@ -143,6 +129,7 @@
         <option value="$PROJECT_DIR$/Model/User.cs" />
         <option value="$PROJECT_DIR$/Model/DbContext/UserContext.cs" />
         <option value="$PROJECT_DIR$/Model/DbContext/IUserContext.cs" />
+        <option value="$PROJECT_DIR$/Model/DbContext/TunderDbContext.cs" />
       </list>
     </option>
   </component>
@@ -360,25 +347,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/DbContext/UserContext.cs">
+    <entry file="file://$PROJECT_DIR$/Model/DbContext/IThunderDbContext.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="77" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding>
-            <marker date="1538007687000" expanded="true" signature="70:388" ph="{...}" />
-            <marker date="1538007687000" expanded="true" signature="157:386" ph="{...}" />
-            <marker date="1538007687000" expanded="true" signature="297:380" ph="{...}" />
+            <marker date="1538007875000" expanded="true" signature="70:165" ph="{...}" />
+            <marker date="1538007875000" expanded="true" signature="111:163" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/DbContext/IUserContext.cs">
+    <entry file="file://$PROJECT_DIR$/Model/DbContext/TunderDbContext.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="60">
+          <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
           <folding>
-            <marker date="1538007700000" expanded="true" signature="70:161" ph="{...}" />
-            <marker date="1538007700000" expanded="true" signature="107:159" ph="{...}" />
+            <marker date="1538007920000" expanded="true" signature="70:396" ph="{...}" />
+            <marker date="1538007920000" expanded="true" signature="165:394" ph="{...}" />
+            <marker date="1538007920000" expanded="true" signature="305:388" ph="{...}" />
           </folding>
         </state>
       </provider>
