@@ -3,8 +3,14 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Repository" />
-    <Folder Include="wwwroot\" />
+    <Compile Remove="Repository\**" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="Repository\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="Repository\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="Repository\**" />
+    <None Remove="wwwroot\**" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -26,5 +32,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design">
       <Version>2.1.5</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 </Project>
