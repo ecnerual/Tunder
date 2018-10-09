@@ -17,5 +17,9 @@ namespace tunder.Model.Repository
         {
             return _dbContext.Users.FirstOrDefault(u => u.Id == id);
         }
+
+        public void Save()
+        {
+        }
     }
 }

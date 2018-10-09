@@ -1,4 +1,5 @@
-﻿using tunder.Model.Enums;
+﻿using System;
+using tunder.Model.Enums;
 
 namespace tunder.Model
 {
@@ -6,5 +7,7 @@ namespace tunder.Model
     {
         public string Name { get; set; }
         public Sexes Sex { get; set; }
+        public string Email { get; set; }
+        public DateTime BirthDateTime { get; set; }
     }
 }

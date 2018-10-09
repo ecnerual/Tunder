@@ -6,8 +6,23 @@
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
+      <e p="BusinessObject" t="Include">
+        <e p="Requests" t="Include">
+          <e p="UserSignInRequest.cs" t="Include" />
+        </e>
+      </e>
       <e p="Controllers" t="Include">
+        <e p="UserController.cs" t="Include" />
         <e p="ValuesController.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20180929205428_InitialCreate.cs" t="Include" />
+        <e p="20180929205428_InitialCreate.Designer.cs" t="Include" />
+        <e p="20180929210917_user_update.cs" t="Include" />
+        <e p="20180929210917_user_update.Designer.cs" t="Include" />
+        <e p="20181004214816_CreateIdentitySchema.cs" t="Include" />
+        <e p="20181004214816_CreateIdentitySchema.Designer.cs" t="Include" />
+        <e p="TunderDbContextModelSnapshot.cs" t="Include" />
       </e>
       <e p="model" t="Include">
         <e p="DbContext" t="Include">
@@ -39,6 +54,7 @@
       <e p="Repository" t="Include" />
       <e p="Startup.cs" t="Include" />
       <e p="tunder.csproj" t="IncludeRecursive" />
+      <e p="tunder.db" t="Include" />
       <e p="tunder.sln" t="IncludeFlat" />
       <e p="wwwroot" t="Include" />
     </e>
