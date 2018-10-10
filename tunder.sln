@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tunder", "tunder.csproj", "{77FC7A77-6DAD-4E7A-B18C-D0B16A72B5EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tunder", ".\Tunder\tunder.csproj", "{77FC7A77-6DAD-4E7A-B18C-D0B16A72B5EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "..\Data\Data.csproj", "{94FEA0DE-6C54-46EE-B6DE-C48D6CD74F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", ".\Data\Data.csproj", "{94FEA0DE-6C54-46EE-B6DE-C48D6CD74F9C}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", ".\Docker-Compose\docker-compose.dcproj", "{94F43D3F-1C37-4F2C-B888-5706298D042A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{94FEA0DE-6C54-46EE-B6DE-C48D6CD74F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94FEA0DE-6C54-46EE-B6DE-C48D6CD74F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94FEA0DE-6C54-46EE-B6DE-C48D6CD74F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F43D3F-1C37-4F2C-B888-5706298D042A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F43D3F-1C37-4F2C-B888-5706298D042A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F43D3F-1C37-4F2C-B888-5706298D042A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F43D3F-1C37-4F2C-B888-5706298D042A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
