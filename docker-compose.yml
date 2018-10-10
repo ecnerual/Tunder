@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  tunder:
+    image: ${DOCKER_REGISTRY}tunder
+    build:
+      context: .
+      dockerfile: Tunder/Dockerfile
