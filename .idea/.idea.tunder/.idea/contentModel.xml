@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p=".dockerignore" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Data" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BusinessObject" t="Include">
+          <e p="DTO" t="Include">
+            <e p="UserDto.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Class1.cs" t="Include" />
+        <e p="Data.csproj" t="IncludeRecursive" />
+        <e p="Model" t="Include">
+          <e p="DbContext" t="Include">
+            <e p="IThunderDbContext.cs" t="Include" />
+            <e p="TunderDbContext.cs" t="Include" />
+          </e>
+          <e p="Enums" t="Include">
+            <e p="Sexes.cs" t="Include" />
+          </e>
+          <e p="ModelBase.cs" t="Include" />
+          <e p="Repository" t="Include">
+            <e p="IUserRepository.cs" t="Include" />
+            <e p="UserRepository.cs" t="Include" />
+          </e>
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="Data.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="docker-compose.dcproj" t="IncludeRecursive" />
+      <e p="docker-compose.override.yml" t="Include" />
+      <e p="docker-compose.yml" t="Include" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="tunder" t="IncludeRecursive">
+        <e p=".dockerignore" t="Include" />
+        <e p=".gitignore" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="UserController.cs" t="Include" />
+          <e p="ValuesController.cs" t="Include" />
+        </e>
+        <e p="Dockerfile" t="Include" />
+        <e p="Dockerfile.original" t="Include" />
+        <e p="Dockerfile1.original" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20180929205428_InitialCreate.cs" t="Include" />
+          <e p="20180929205428_InitialCreate.Designer.cs" t="Include" />
+          <e p="20180929210917_user_update.cs" t="Include" />
+          <e p="20180929210917_user_update.Designer.cs" t="Include" />
+          <e p="20181004214816_CreateIdentitySchema.cs" t="Include" />
+          <e p="20181004214816_CreateIdentitySchema.Designer.cs" t="Include" />
+          <e p="TunderDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="tunder.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="AuthService.cs" t="Include" />
+          <e p="IAuthService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="tunder.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tunder.sln" t="IncludeFlat" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_tunder.-897928070.00" t="ExcludeRecursive" />
+  </component>
+</project>

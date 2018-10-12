@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using tunder.Model.DbContext;
 
 namespace tunder.Model.Repository
@@ -13,9 +15,15 @@ namespace tunder.Model.Repository
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public User GetById(long id)
+        
+        public Task<User> GetById(long id)
         {
-            return _dbContext.Users.FirstOrDefault(u => u.Id == id);
+            return _dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
+        }
+
+        public Task<bool> UserExists(string email)
+        {
+            return _dbContext.Users.AnyAsync(user => user.Email == email);
         }
 
         public void Save()

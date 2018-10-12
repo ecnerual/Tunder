@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8fcad28c-6879-4d0e-8a26-9944eaea88bc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Data/BusinessObject/DTO/UserSignInRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/BusinessObject/DTO/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Model/Repository/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Model/Repository/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Model/Repository/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Model/Repository/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tunder/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tunder/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tunder/Services/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tunder/Services/IAuthService.cs" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="UserRepository.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Model/Repository/UserRepository.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+              <folding>
+                <marker date="1539304129000" expanded="false" signature="6:129" ph="..." />
+                <marker date="1539304129000" expanded="true" signature="164:795" ph="{...}" />
+                <marker date="1539304129000" expanded="true" signature="216:793" ph="{...}" />
+                <marker date="1539304129000" expanded="true" signature="335:445" ph="{...}" />
+                <marker date="1539304129000" expanded="true" signature="498:592" ph="{...}" />
+                <marker date="1539304129000" expanded="true" signature="644:739" ph="{...}" />
+                <marker date="1539304129000" expanded="true" signature="767:787" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IUserRepository.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Model/Repository/IUserRepository.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+              <folding>
+                <marker date="1539304129000" expanded="true" signature="64:222" ph="{...}" />
+                <marker date="1539304129000" expanded="true" signature="105:220" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IAuthService.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tunder/Services/IAuthService.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+              <folding>
+                <marker date="1539304129000" expanded="false" signature="6:154" ph="..." />
+                <marker date="1539304129000" expanded="true" signature="181:444" ph="{...}" />
+                <marker date="1539304129000" expanded="true" signature="217:442" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDto.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/BusinessObject/DTO/UserDto.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <folding>
+                <marker date="1539304007000" expanded="true" signature="6:84" ph="..." />
+                <marker date="1539304007000" expanded="true" signature="126:456" ph="{...}" />
+                <marker date="1539304007000" expanded="true" signature="153:454" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthService.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tunder/Services/AuthService.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+              <folding>
+                <marker date="1539304623000" expanded="true" signature="6:132" ph="..." />
+                <marker date="1539304623000" expanded="true" signature="159:1053" ph="{...}" />
+                <marker date="1539304623000" expanded="true" signature="205:1051" ph="{...}" />
+                <marker date="1539304623000" expanded="true" signature="329:454" ph="{...}" />
+                <marker date="1539304623000" expanded="true" signature="522:629" ph="{...}" />
+                <marker date="1539304623000" expanded="true" signature="693:769" ph="{...}" />
+                <marker date="1539304623000" expanded="true" signature="834:910" ph="{...}" />
+                <marker date="1539304623000" expanded="true" signature="969:1045" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tunder/Controllers/UserController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <folding>
+                <marker date="1539304750000" expanded="true" signature="6:187" ph="..." />
+                <marker date="1539304750000" expanded="true" signature="217:1173" ph="{...}" />
+                <marker date="1539304750000" expanded="true" signature="320:1171" ph="{...}" />
+                <marker date="1539304750000" expanded="true" signature="525:759" ph="{...}" />
+                <marker date="1539304750000" expanded="true" signature="905:1165" ph="{...}" />
+                <marker date="1539304750000" expanded="true" signature="980:1025" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValuesController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tunder/Controllers/ValuesController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1539301956000" expanded="false" signature="6:128" ph="..." />
+                <marker date="1539301956000" expanded="true" signature="158:966" ph="{...}" />
+                <marker date="1539301956000" expanded="true" signature="263:964" ph="{...}" />
+                <marker date="1539301956000" expanded="true" signature="368:442" ph="{...}" />
+                <marker date="1539301956000" expanded="true" signature="545:593" ph="{...}" />
+                <marker date="1539301956000" expanded="true" signature="690:710" ph="{...}" />
+                <marker date="1539301956000" expanded="true" signature="822:842" ph="{...}" />
+                <marker date="1539301956000" expanded="true" signature="938:958" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Data/Model/Repository/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/Model/Repository/IUserRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Data/BusinessObject/DTO/UserDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder/Controllers/ValuesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder/Services/AuthService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder/Services/IAuthService.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Data/Model/Repository/UserRepository.cs" />
+        <option value="$PROJECT_DIR$/Data/Model/Repository/IUserRepository.cs" />
+        <option value="$PROJECT_DIR$/Tunder/Services/IAuthService.cs" />
+        <option value="$PROJECT_DIR$/Data/BusinessObject/DTO/UserDto.cs" />
+        <option value="$PROJECT_DIR$/Tunder/Services/AuthService.cs" />
+        <option value="$PROJECT_DIR$/Tunder/Controllers/UserController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="709" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Data" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Data" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="BusinessObject" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Data" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="BusinessObject" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="DTO" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Data" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Model" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Data" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Model" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Enums" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Data" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Model" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Repository" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="tunder" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="tunder" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Controllers" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="tunder (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="tunder" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Services" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+    </configuration>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Unit Tests" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="REST Client" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection Results" visible="true" weight="0.27724138" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Data/Model/Repository/IUserRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding>
+            <marker date="1539304129000" expanded="true" signature="64:222" ph="{...}" />
+            <marker date="1539304129000" expanded="true" signature="105:220" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Model/Repository/UserRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          <folding>
+            <marker date="1539304129000" expanded="false" signature="6:129" ph="..." />
+            <marker date="1539304129000" expanded="true" signature="164:795" ph="{...}" />
+            <marker date="1539304129000" expanded="true" signature="216:793" ph="{...}" />
+            <marker date="1539304129000" expanded="true" signature="335:445" ph="{...}" />
+            <marker date="1539304129000" expanded="true" signature="498:592" ph="{...}" />
+            <marker date="1539304129000" expanded="true" signature="644:739" ph="{...}" />
+            <marker date="1539304129000" expanded="true" signature="767:787" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tunder/Services/IAuthService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <marker date="1539304129000" expanded="false" signature="6:154" ph="..." />
+            <marker date="1539304129000" expanded="true" signature="181:444" ph="{...}" />
+            <marker date="1539304129000" expanded="true" signature="217:442" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/BusinessObject/DTO/UserDto.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding>
+            <marker date="1539304007000" expanded="true" signature="6:84" ph="..." />
+            <marker date="1539304007000" expanded="true" signature="126:456" ph="{...}" />
+            <marker date="1539304007000" expanded="true" signature="153:454" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tunder/Controllers/ValuesController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1539301956000" expanded="false" signature="6:128" ph="..." />
+            <marker date="1539301956000" expanded="true" signature="158:966" ph="{...}" />
+            <marker date="1539301956000" expanded="true" signature="263:964" ph="{...}" />
+            <marker date="1539301956000" expanded="true" signature="368:442" ph="{...}" />
+            <marker date="1539301956000" expanded="true" signature="545:593" ph="{...}" />
+            <marker date="1539301956000" expanded="true" signature="690:710" ph="{...}" />
+            <marker date="1539301956000" expanded="true" signature="822:842" ph="{...}" />
+            <marker date="1539301956000" expanded="true" signature="938:958" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tunder/Services/AuthService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding>
+            <marker date="1539304623000" expanded="true" signature="6:132" ph="..." />
+            <marker date="1539304623000" expanded="true" signature="159:1053" ph="{...}" />
+            <marker date="1539304623000" expanded="true" signature="205:1051" ph="{...}" />
+            <marker date="1539304623000" expanded="true" signature="329:454" ph="{...}" />
+            <marker date="1539304623000" expanded="true" signature="522:629" ph="{...}" />
+            <marker date="1539304623000" expanded="true" signature="693:769" ph="{...}" />
+            <marker date="1539304623000" expanded="true" signature="834:910" ph="{...}" />
+            <marker date="1539304623000" expanded="true" signature="969:1045" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tunder/Controllers/UserController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <marker date="1539304750000" expanded="true" signature="6:187" ph="..." />
+            <marker date="1539304750000" expanded="true" signature="217:1173" ph="{...}" />
+            <marker date="1539304750000" expanded="true" signature="320:1171" ph="{...}" />
+            <marker date="1539304750000" expanded="true" signature="525:759" ph="{...}" />
+            <marker date="1539304750000" expanded="true" signature="905:1165" ph="{...}" />
+            <marker date="1539304750000" expanded="true" signature="980:1025" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

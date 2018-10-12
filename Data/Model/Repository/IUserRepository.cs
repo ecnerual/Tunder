@@ -1,7 +1,11 @@
-﻿namespace tunder.Model.Repository
+﻿using System.Threading.Tasks;
+
+namespace tunder.Model.Repository
 {
-    public interface IUserRepository
+    public interface IUserRepository  
     {
-        User GetById(long id);
+        Task<User> GetById(long id);
+        Task<bool> UserExists(string email);
+        void Save();
     }
 }
