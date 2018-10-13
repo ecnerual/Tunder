@@ -6,6 +6,7 @@ namespace tunder.Model.Repository
     {
         Task<User> GetById(long id);
         Task<bool> UserExists(string email);
+        Task<User> CreateUser(User user);
         void Save();
     }
 }

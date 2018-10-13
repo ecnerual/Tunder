@@ -8,17 +8,16 @@ namespace tunder.Model.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private readonly ITunderDbContext _dbContext;
+        private readonly TunderDbContext _dbContext;
 
-        public UserRepository(ITunderDbContext dbContext)
+        public UserRepository(TunderDbContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
-
         
-        public Task<User> GetById(long id)
+        public async Task<User> GetById(long id)
         {
-            return _dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
+            return await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
         }
 
         public Task<bool> UserExists(string email)
@@ -26,8 +25,16 @@ namespace tunder.Model.Repository
             return _dbContext.Users.AnyAsync(user => user.Email == email);
         }
 
+        public async Task<User> CreateUser(User user)
+        {
+            await _dbContext.Users.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
+            return user;
+        }
+
         public void Save()
         {
+            _dbContext.SaveChangesAsync();
         }
     }
 }

@@ -21,22 +21,25 @@ namespace tunder.Controllers
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
             
         }
-
-        
-        // POST api/values
+    
         [HttpPost("register")]
+        [ProducesResponseType(201, Type = typeof(User))]
+        [ProducesResponseType(400)]
         public async Task<IActionResult> Register([FromBody] UserDto userDto)
         {
             if (await _userRepository.UserExists(userDto.Email))
             {
-                
+                BadRequest(ModelState);
             } 
             
             User user = await _authService.Register(userDto);
-             
-             
 
-            return Ok();
+            return Created("user/me", user);
+        }
+
+        public async Task<IActionResult> Login(LoginDto loginDto)
+        {
+            
         }
     }
 }

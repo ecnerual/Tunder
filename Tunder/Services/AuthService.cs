@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CommonCode.Helpers;
+using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 using tunder.BusinessObject.Requests;
 using tunder.Model;
 using tunder.Model.Repository;
@@ -18,16 +20,18 @@ namespace tunder.Services
 
         public async Task<User> Register(UserDto userDto)
         {
+            var salt = CryptoHelpers.GetSalt();
 
-           
-           
-            
-            throw new NotImplementedException();
+            var hashedPassword = CryptoHelpers.HashPassword(userDto.Password, salt);
+
+            User newUser = User.From(userDto, hashedPassword, salt);
+
+            return await _userRepository.CreateUser(newUser);
         }
 
         public Task<User> Login(string email, string password)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public Task<User> Logout(string email, string password)

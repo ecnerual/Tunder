@@ -38,6 +38,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonCode\CommonCode.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 </Project>
