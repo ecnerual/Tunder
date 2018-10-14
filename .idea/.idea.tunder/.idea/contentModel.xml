@@ -8,8 +8,14 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Class1.cs" t="Include" />
         <e p="CommonCode.csproj" t="IncludeRecursive" />
+        <e p="Events" t="Include" />
         <e p="Helpers" t="Include">
           <e p="CryptoHelpers.cs" t="Include" />
+        </e>
+        <e p="Messages" t="Include">
+          <e p="BaseMessage.cs" t="Include" />
+          <e p="MessageType.cs" t="Include" />
+          <e p="SendingInfo.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -64,6 +70,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="SessionController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
@@ -93,6 +100,7 @@
         <e p="Services" t="Include">
           <e p="AuthService.cs" t="Include" />
           <e p="IAuthService.cs" t="Include" />
+          <e p="INotificationService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="tunder.csproj" t="IncludeRecursive" />

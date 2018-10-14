@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CommonCode.Helpers;
+using Data.Model;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 using tunder.BusinessObject.Requests;
 using tunder.Model;
@@ -29,9 +30,11 @@ namespace tunder.Services
             return await _userRepository.CreateUser(newUser);
         }
 
-        public Task<User> Login(string email, string password)
+        public async Task<User> Login(string email, string password)
         {
-            
+            User user = await _userRepository.GetByEmail(email);
+
+            return user.HashedPassword == CryptoHelpers.HashPassword(password, user.Salt) ? null : user;
         }
 
         public Task<User> Logout(string email, string password)

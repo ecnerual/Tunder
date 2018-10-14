@@ -1,8 +1,9 @@
 ﻿using System;
 using tunder.BusinessObject.Requests;
+using tunder.Model;
 using tunder.Model.Enums;
 
-namespace tunder.Model
+namespace Data.Model
 {
     public class User : ModelBase
     {
@@ -12,6 +13,10 @@ namespace tunder.Model
         public DateTime BirthDateTime { get; set; }
         public byte[] HashedPassword { get; set; }
         public byte[] Salt { get; set; }
+        public string AuthToken { get; set; }
+        public bool IsActivited { get; set; }
+        public string ActivationToken { get; set; }
+        
 
 
         public static User From(UserDto userDto, byte[] hashedPassword, byte[] salt)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Data.Model;
 using Microsoft.EntityFrameworkCore;
 using tunder.Model.DbContext;
 
@@ -18,6 +19,11 @@ namespace tunder.Model.Repository
         public async Task<User> GetById(long id)
         {
             return await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
+        }
+
+        public async Task<User> GetByEmail(string email)
+        {
+            return await _dbContext.Users.FirstOrDefaultAsync(user => user.Email == email);
         }
 
         public Task<bool> UserExists(string email)
