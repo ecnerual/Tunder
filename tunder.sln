@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tunder", "Tunder\tunder.csproj", "{77FC7A77-6DAD-4E7A-B18C-D0B16A72B5EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tunder.API", "Tunder\Tunder.API.csproj", "{77FC7A77-6DAD-4E7A-B18C-D0B16A72B5EE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{94FEA0DE-6C54-46EE-B6DE-C48D6CD74F9C}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FA055436-0E0E-43ED-ADBA-8A0715D6654D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonCode", "CommonCode\CommonCode.csproj", "{7A3F7F60-26C7-44BE-A905-452640F06B97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonCode", "CommonCode\CommonCode.csproj", "{7A3F7F60-26C7-44BE-A905-452640F06B97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tunder.API.Tests", "Tunder.API.Tests\Tunder.API.Tests.csproj", "{94C5ACD9-0F85-4051-9399-81B52E48E5A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7A3F7F60-26C7-44BE-A905-452640F06B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A3F7F60-26C7-44BE-A905-452640F06B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A3F7F60-26C7-44BE-A905-452640F06B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C5ACD9-0F85-4051-9399-81B52E48E5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C5ACD9-0F85-4051-9399-81B52E48E5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C5ACD9-0F85-4051-9399-81B52E48E5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C5ACD9-0F85-4051-9399-81B52E48E5A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

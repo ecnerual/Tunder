@@ -42,12 +42,11 @@ namespace tunder.Controllers
         [ProducesResponseType(400)]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
-            
             User user = await _authService.Login(loginDto.Email, loginDto.Password);
 
-            if (!user.IsActivited)
+            if (user == null || !user.IsActivited)
             {
-                BadRequest();
+                return Unauthorized();
             }
 
             return Ok(user);
