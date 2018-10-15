@@ -10,7 +10,7 @@ namespace tunder.Services
 {
     public interface IAuthService
     {
-        Task<User> Register(UserDto userDto);
+        Task<User> Register(UserRegisterDto userDto);
         Task<User> Login(string email, string password);
         Task<User> Logout(string email, string password);
         Task<User> ResumeSession(byte[] authToken);

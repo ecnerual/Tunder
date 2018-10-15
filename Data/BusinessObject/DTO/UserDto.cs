@@ -4,7 +4,7 @@ using tunder.Model.Enums;
 
 namespace tunder.BusinessObject.Requests
 {
-    public class UserDto
+    public class UserRegisterDto
     {
         [Required] public string UserName { get; set; }
 

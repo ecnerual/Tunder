@@ -19,7 +19,7 @@ namespace tunder.Services
         }
         
 
-        public async Task<User> Register(UserDto userDto)
+        public async Task<User> Register(UserRegisterDto userDto)
         {
             var salt = CryptoHelpers.GetSalt();
 

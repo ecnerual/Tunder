@@ -26,9 +26,10 @@ namespace Tunder.API.Tests.Controllers
             _userRepoMock = new Mock<IUserRepository>();
         }
 
+        #region Login
 
         [TestMethod]
-        public async Task MissingUserReturns401Async()
+        public async void MissingUserReturns401Async()
         {
             User user = null;
 
@@ -42,5 +43,23 @@ namespace Tunder.API.Tests.Controllers
 
             Assert.IsInstanceOfType(loginResult, typeof(UnauthorizedResult));
         }
+
+        #endregion
+
+        #region REGISTER!
+
+        [TestMethod]
+        public async void UserAlreadyExists()
+        {
+            _userRepoMock.Setup(userRepo => userRepo.UserExists(It.IsAny<string>()))
+                         .ReturnsAsync(true);
+
+            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object);
+
+            var registerResult = await controller.Register(new UserRegisterDto());
+            Assert.IsInstanceOfType(registerResult, typeof(BadRequestResult));
+        }
+
+        #endregion
     }
 }

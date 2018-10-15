@@ -19,7 +19,7 @@ namespace Data.Model
         
 
 
-        public static User From(UserDto userDto, byte[] hashedPassword, byte[] salt)
+        public static User From(UserRegisterDto userDto, byte[] hashedPassword, byte[] salt)
         {
             return new User()
             {
