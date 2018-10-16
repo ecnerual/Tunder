@@ -12,7 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Serialization;
 using tunder.Model.DbContext;
+using tunder.Model.Repository;
+using tunder.Services;
 
 namespace tunder
 {
@@ -28,9 +31,13 @@ namespace tunder
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                    .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver())
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<TunderDbContext>();
+            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+            services.AddScoped(typeof(IAuthService), typeof(AuthService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

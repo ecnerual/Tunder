@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace tunder.Migrations
+namespace Data.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -15,7 +15,14 @@ namespace tunder.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Guid = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    Sex = table.Column<int>(nullable: false)
+                    Sex = table.Column<int>(nullable: false),
+                    Email = table.Column<string>(nullable: true),
+                    BirthDateTime = table.Column<DateTime>(nullable: false),
+                    HashedPassword = table.Column<byte[]>(nullable: true),
+                    Salt = table.Column<byte[]>(nullable: true),
+                    AuthToken = table.Column<string>(nullable: true),
+                    IsActivited = table.Column<bool>(nullable: false),
+                    ActivationToken = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

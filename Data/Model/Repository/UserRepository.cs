@@ -26,9 +26,9 @@ namespace tunder.Model.Repository
             return await _dbContext.Users.FirstOrDefaultAsync(user => user.Email == email);
         }
 
-        public Task<bool> UserExists(string email)
+        public async Task<bool> UserExists(string email)
         {
-            return _dbContext.Users.AnyAsync(user => user.Email == email);
+            return await _dbContext.Users.AnyAsync(user => user.Email == email);
         }
 
         public async Task<User> CreateUser(User user)

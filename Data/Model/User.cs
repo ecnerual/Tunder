@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using tunder.BusinessObject.Requests;
 using tunder.Model;
 using tunder.Model.Enums;
@@ -11,13 +12,16 @@ namespace Data.Model
         public Sexes Sex { get; set; }
         public string Email { get; set; }
         public DateTime BirthDateTime { get; set; }
+        [JsonIgnore]
         public byte[] HashedPassword { get; set; }
+        [JsonIgnore]
         public byte[] Salt { get; set; }
+        [JsonIgnore]
         public string AuthToken { get; set; }
+        [JsonIgnore]
         public bool IsActivited { get; set; }
+        [JsonIgnore]
         public string ActivationToken { get; set; }
-        
-
 
         public static User From(UserRegisterDto userDto, byte[] hashedPassword, byte[] salt)
         {
@@ -25,7 +29,7 @@ namespace Data.Model
             {
                 Name = userDto.UserName,
                 Sex = userDto.Sexe,
-                Email = userDto.Email,
+                Email = userDto.Email.ToLower(),
                 HashedPassword = hashedPassword,
                 Salt = salt
             };

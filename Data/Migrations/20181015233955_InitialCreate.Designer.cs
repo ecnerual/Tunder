@@ -6,22 +6,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tunder.Model.DbContext;
 
-namespace tunder.Migrations
+namespace Data.Migrations
 {
     [DbContext(typeof(TunderDbContext))]
-    [Migration("20180929210917_user_update")]
-    partial class user_update
+    [Migration("20181015233955_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.0-rtm-30799");
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
 
-            modelBuilder.Entity("tunder.Model.User", b =>
+            modelBuilder.Entity("Data.Model.User", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ActivationToken");
+
+                    b.Property<string>("AuthToken");
 
                     b.Property<DateTime>("BirthDateTime");
 
@@ -29,7 +33,13 @@ namespace tunder.Migrations
 
                     b.Property<Guid>("Guid");
 
+                    b.Property<byte[]>("HashedPassword");
+
+                    b.Property<bool>("IsActivited");
+
                     b.Property<string>("Name");
+
+                    b.Property<byte[]>("Salt");
 
                     b.Property<int>("Sex");
 

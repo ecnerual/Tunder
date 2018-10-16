@@ -27,7 +27,7 @@ namespace tunder.Controllers
         [ProducesResponseType(400)]
         public async Task<IActionResult> Register([FromBody] UserRegisterDto userDto)
         {
-            if (await _userRepository.UserExists(userDto.Email))
+            if (await _userRepository.UserExists(userDto.Email.ToLower()))
             {
                 BadRequest();
             }
@@ -51,7 +51,7 @@ namespace tunder.Controllers
 
             return Ok(user);
         }
-
+        /*
         [HttpDelete("logout")]
         [ProducesResponseType(204)]
         public async Task<IActionResult> Logout()
@@ -60,5 +60,6 @@ namespace tunder.Controllers
 
             return NoContent();
         }
+        */
     }
 }
