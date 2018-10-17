@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+FROM microsoft/dotnet:2.1-sdk AS base
 WORKDIR /app
 EXPOSE 35396
 EXPOSE 44352
@@ -10,10 +10,10 @@ COPY Data/Data.csproj Data/
 RUN dotnet restore Tunder/tunder.csproj
 COPY . .
 WORKDIR /src/Tunder
-RUN dotnet build tunder.csproj -c Release -o /app
+RUN dotnet build Tunder.csproj -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish tunder.csproj -c Release -o /app
+RUN dotnet publish Tunder.csproj -c Release -o /app
 
 FROM base AS final
 WORKDIR /app

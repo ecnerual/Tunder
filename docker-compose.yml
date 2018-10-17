@@ -6,3 +6,16 @@ services:
     build:
       context: .
       dockerfile: Tunder/Dockerfile
+    depends_on:
+            - db
+  db:
+    image: "microsoft/mssql-server-linux"
+    build:
+      context: .
+      dockerfile: infra/mssql/Dockerfile     
+    environment:
+      SA_PASSWORD: "BonjourMadame69"
+      ACCEPT_EULA: "Y"
+    ports:
+      - target: 1433
+        published: 1433

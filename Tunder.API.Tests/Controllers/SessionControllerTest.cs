@@ -29,7 +29,7 @@ namespace Tunder.API.Tests.Controllers
         #region Login
 
         [TestMethod]
-        public async void MissingUserReturns401Async()
+        public async Task MissingUserReturns401Async()
         {
             User user = null;
 
@@ -49,14 +49,37 @@ namespace Tunder.API.Tests.Controllers
         #region REGISTER!
 
         [TestMethod]
-        public async void UserAlreadyExists()
+        public async Task UserAlreadyExists()
         {
             _userRepoMock.Setup(userRepo => userRepo.UserExists(It.IsAny<string>()))
                          .ReturnsAsync(true);
 
             var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object);
 
-            var registerResult = await controller.Register(new UserRegisterDto());
+            var registerResult = await controller.Register(new UserRegisterDto() { Email = "bonjourMadame" });
+            Assert.IsInstanceOfType(registerResult, typeof(BadRequestResult));
+        }
+
+        [TestMethod]
+        public async Task UserSendUpperCaseEmail()
+        {
+            var lowEmail = "yolo@lol.com";
+            var upperEmail = "YoLo@lol.com";
+
+            _userRepoMock.Setup(userRepo => userRepo.UserExists(lowEmail))
+                         .ReturnsAsync(true);
+
+            _userRepoMock.Setup(userRepo => userRepo.UserExists(upperEmail))
+                         .ReturnsAsync(false);
+
+            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object);
+
+            var userDto = new UserRegisterDto
+            {
+                Email = upperEmail
+            };
+
+            var registerResult = await controller.Register(userDto);
             Assert.IsInstanceOfType(registerResult, typeof(BadRequestResult));
         }
 

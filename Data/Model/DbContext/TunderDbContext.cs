@@ -7,9 +7,10 @@ namespace tunder.Model.DbContext
     {
         public DbSet<User> Users { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public TunderDbContext(DbContextOptions<TunderDbContext> options) : base(options)
         {
-            optionsBuilder.UseSqlite("Data Source=tunder.db");
+
         }
+       
     }
 }

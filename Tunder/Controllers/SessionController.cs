@@ -27,9 +27,11 @@ namespace tunder.Controllers
         [ProducesResponseType(400)]
         public async Task<IActionResult> Register([FromBody] UserRegisterDto userDto)
         {
-            if (await _userRepository.UserExists(userDto.Email.ToLower()))
+            userDto.Email = userDto.Email.ToLower();
+
+            if (await _userRepository.UserExists(userDto.Email))
             {
-                BadRequest();
+                return BadRequest();
             }
 
             User user = await _authService.Register(userDto);

@@ -15,12 +15,16 @@ What things you need to install the software and how to install them
 #2 .net core 2.1 > LTS
  https://www.microsoft.com/net/download
 
+#3 SQL SERVER 2017!
+	https://www.microsoft.com/en-gb/sql-server/sql-server-downloads
+	
+Im using the developer version  
+
 ```
 Give examples
 ```
 
 ### Installing
-Will Setup SqLite + restore dependencies !
 
 
 ```
