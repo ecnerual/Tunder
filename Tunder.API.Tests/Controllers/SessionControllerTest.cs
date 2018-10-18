@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using tunder.BusinessObject.Requests;
-using tunder.Controllers;
-using tunder.Model.Repository;
-using tunder.Services;
+using Data.BusinessObject.Requests;
+using Data.Model.Repository;
+using Tunder.API.Controllers;
+using Tunder.API.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Tunder.API.Tests.Controllers
@@ -26,7 +26,7 @@ namespace Tunder.API.Tests.Controllers
             _userRepoMock = new Mock<IUserRepository>();
         }
 
-        #region Login
+        #region LOGIN
 
         [TestMethod]
         public async Task MissingUserReturns401Async()

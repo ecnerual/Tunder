@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CommonCode.Helpers;
+using Data.BusinessObject.Requests;
 using Data.Model;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
-using tunder.BusinessObject.Requests;
-using tunder.Model;
-using tunder.Model.Repository;
+using Data.Model;
+using Data.Model.Repository;
 
-namespace tunder.Services
+namespace Tunder.API.Services
 {
     public class AuthService : IAuthService
     {
@@ -18,7 +18,6 @@ namespace tunder.Services
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
         
-
         public async Task<User> Register(UserRegisterDto userDto)
         {
             var salt = CryptoHelpers.GetSalt();

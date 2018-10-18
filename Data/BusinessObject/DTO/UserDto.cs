@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using tunder.Model.Enums;
+using Data.Model.Enums;
 
-namespace tunder.BusinessObject.Requests
+namespace Data.BusinessObject.Requests
 {
     public class UserRegisterDto
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace tunder.Controllers
+namespace Tunder.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

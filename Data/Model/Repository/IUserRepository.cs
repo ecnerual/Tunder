@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Data.Model;
 
-namespace tunder.Model.Repository
+namespace Data.Model.Repository
 {
     public interface IUserRepository  
     {

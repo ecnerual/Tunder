@@ -13,9 +13,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
-using tunder.Model.DbContext;
-using tunder.Model.Repository;
-using tunder.Services;
+using Data.Model.DbContext;
+using Data.Model.Repository;
+using Tunder.API.Services;
+using Tunder.API.Services;
 
 namespace tunder
 {
@@ -41,6 +42,8 @@ namespace tunder
 
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
             services.AddScoped(typeof(IAuthService), typeof(AuthService));
+            services.AddScoped(typeof(INotificationService), typeof(NotificationService));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

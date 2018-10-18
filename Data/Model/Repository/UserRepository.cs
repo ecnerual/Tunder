@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Data.Model;
 using Microsoft.EntityFrameworkCore;
-using tunder.Model.DbContext;
+using Data.Model.DbContext;
 
-namespace tunder.Model.Repository
+namespace Data.Model.Repository
 {
     public class UserRepository : IUserRepository
     {

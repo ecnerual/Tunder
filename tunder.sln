@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tunder.API", "Tunder\Tunder.API.csproj", "{77FC7A77-6DAD-4E7A-B18C-D0B16A72B5EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tunder.API", "Tunder.API\Tunder.API.csproj", "{77FC7A77-6DAD-4E7A-B18C-D0B16A72B5EE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{94FEA0DE-6C54-46EE-B6DE-C48D6CD74F9C}"
 EndProject

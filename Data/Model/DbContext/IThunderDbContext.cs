@@ -1,7 +1,7 @@
 ﻿using Data.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace tunder.Model.DbContext
+namespace Data.Model.DbContext
 {
     public interface ITunderDbContext 
     {

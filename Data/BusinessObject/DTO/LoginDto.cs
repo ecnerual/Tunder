@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace tunder.BusinessObject.Requests
+namespace Data.BusinessObject.Requests
 {
     public class LoginDto
     {

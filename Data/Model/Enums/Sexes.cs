@@ -1,4 +1,4 @@
-﻿namespace tunder.Model.Enums
+﻿namespace Data.Model.Enums
 {
     public enum Sexes
     {

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Data.BusinessObject.Requests;
 using Data.Model;
-using tunder.BusinessObject.Requests;
-using tunder.Model;
 
-namespace tunder.Services
+namespace Tunder.API.Services
 {
     public interface IAuthService
     {

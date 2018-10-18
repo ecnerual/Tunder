@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
-using tunder.BusinessObject.Requests;
-using tunder.Model;
-using tunder.Model.Enums;
+using Data.BusinessObject.Requests;
+using Data.Model;
+using Data.Model.Enums;
 
 namespace Data.Model
 {

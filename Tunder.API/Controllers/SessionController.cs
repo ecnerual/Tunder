@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Data.BusinessObject.Requests;
 using Data.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using tunder.BusinessObject.Requests;
-using tunder.Model.Repository;
-using tunder.Services;
+using Data.Model.Repository;
+using Tunder.API.Services;
 
-namespace tunder.Controllers
+namespace Tunder.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
