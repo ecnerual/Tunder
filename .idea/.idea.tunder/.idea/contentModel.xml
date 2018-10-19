@@ -49,8 +49,10 @@
             <e p="TunderDbContext.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
+            <e p="MatchStatus.cs" t="Include" />
             <e p="Sexes.cs" t="Include" />
           </e>
+          <e p="Match.cs" t="Include" />
           <e p="ModelBase.cs" t="Include" />
           <e p="Repository" t="Include">
             <e p="IUserRepository.cs" t="Include" />
@@ -83,8 +85,8 @@
           <e p="Factories" t="Include" />
         </e>
         <e p="Controllers" t="Include">
+          <e p="MatchController.cs" t="Include" />
           <e p="SessionController.cs" t="Include" />
-          <e p="UserController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Dockerfile" t="Include" />

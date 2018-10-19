@@ -14,6 +14,7 @@
     <EmbeddedResource Remove="wwwroot\**" />
     <None Remove="Repository\**" />
     <None Remove="wwwroot\**" />
+    <Compile Remove="Controllers\UserController.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

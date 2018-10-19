@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using CommonCode.Helpers;
 using Data.BusinessObject.Requests;
 using Data.Model;
 using Microsoft.AspNetCore.Http;
@@ -64,7 +65,7 @@ namespace Tunder.API.Controllers
                 new Claim(ClaimTypes.Email, user.Email)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configs.GetSection("AppSettings:token").Value));
+            var key =  CryptoHelpers.GetSymmetricSecurityKey(_configs);
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 

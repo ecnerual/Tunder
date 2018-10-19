@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CommonCode.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,6 +16,8 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
 using Data.Model.DbContext;
 using Data.Model.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Tunder.API.Services;
 
 namespace tunder
@@ -39,6 +42,21 @@ namespace tunder
                     .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver())
                     .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = CryptoHelpers.GetSymmetricSecurityKey(Configuration),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+
+            //DI
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
             services.AddScoped(typeof(IAuthService), typeof(AuthService));
             services.AddScoped(typeof(INotificationService), typeof(NotificationService));
@@ -61,7 +79,9 @@ namespace tunder
                 app.UseHsts();
             }
 
+            app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

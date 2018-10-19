@@ -1,5 +1,9 @@
 ﻿using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CommonCode.Helpers
 {
@@ -26,6 +30,11 @@ namespace CommonCode.Helpers
                 prf: KeyDerivationPrf.HMACSHA1,
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8);
+        }
+
+        public static SymmetricSecurityKey GetSymmetricSecurityKey(IConfiguration configs)
+        {
+            return new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configs.GetSection("AppSettings:token").Value));
         }
     }
 }
