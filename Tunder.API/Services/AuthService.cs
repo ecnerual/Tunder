@@ -12,12 +12,14 @@ namespace Tunder.API.Services
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IThrottleService _throttleService;
 
-        public AuthService(IUserRepository userRepository)
+        public AuthService(IUserRepository userRepository, IThrottleService throttleService)
         {
+            _throttleService = throttleService ?? throw new ArgumentNullException(nameof(throttleService));
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
-        
+
         public async Task<User> Register(UserRegisterDto userDto)
         {
             var salt = CryptoHelpers.GetSalt();
@@ -33,7 +35,20 @@ namespace Tunder.API.Services
         {
             User user = await _userRepository.GetByEmail(email);
 
-            return user.HashedPassword == CryptoHelpers.HashPassword(password, user.Salt) ? null : user;
+            if (user == null || await _throttleService.GetFailLoginFailAttempt(user) >= 5)
+            {
+                return null;
+            }
+
+            var validPassword = user.HashedPassword == CryptoHelpers.HashPassword(password, user.Salt);
+
+            if (!validPassword)
+            {
+                _throttleService.LogFailLoginAttempt(user);
+                return null;
+            }
+
+            return user;
         }
 
         public Task<User> Logout(string email, string password)

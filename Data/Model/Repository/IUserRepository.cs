@@ -8,6 +8,7 @@ namespace Data.Model.Repository
         Task<User> GetByEmail(string email);
         Task<bool> UserExists(string email);
         Task<User> CreateUser(User user);
+        Task<User> UpdateUser(User user);
         void Save();
     }
 }

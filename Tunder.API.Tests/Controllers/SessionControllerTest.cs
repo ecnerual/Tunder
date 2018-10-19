@@ -10,6 +10,7 @@ using Data.Model.Repository;
 using Tunder.API.Controllers;
 using Tunder.API.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace Tunder.API.Tests.Controllers
 {
@@ -18,12 +19,14 @@ namespace Tunder.API.Tests.Controllers
     {
         private Mock<IAuthService> _authServiceMock;
         private Mock<IUserRepository> _userRepoMock;
+        private Mock<IConfiguration> _config;
 
         [TestInitialize]
         public void Init()
         {
             _authServiceMock = new Mock<IAuthService>();
             _userRepoMock = new Mock<IUserRepository>();
+            _config = new Mock<IConfiguration>();
         }
 
         #region LOGIN
@@ -36,7 +39,7 @@ namespace Tunder.API.Tests.Controllers
             _authServiceMock.Setup(authS => authS.Login(It.IsAny<string>(), It.IsAny<string>()))
                         .ReturnsAsync(user);
 
-            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object);
+            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object);
 
 
             var loginResult = await controller.Login(new LoginDto());
@@ -54,7 +57,7 @@ namespace Tunder.API.Tests.Controllers
             _userRepoMock.Setup(userRepo => userRepo.UserExists(It.IsAny<string>()))
                          .ReturnsAsync(true);
 
-            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object);
+            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object);
 
             var registerResult = await controller.Register(new UserRegisterDto() { Email = "bonjourMadame" });
             Assert.IsInstanceOfType(registerResult, typeof(BadRequestResult));
@@ -72,7 +75,7 @@ namespace Tunder.API.Tests.Controllers
             _userRepoMock.Setup(userRepo => userRepo.UserExists(upperEmail))
                          .ReturnsAsync(false);
 
-            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object);
+            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object);
 
             var userDto = new UserRegisterDto
             {

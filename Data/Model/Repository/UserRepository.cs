@@ -38,6 +38,11 @@ namespace Data.Model.Repository
             return user;
         }
 
+        public Task<User> UpdateUser(User user)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Save()
         {
             _dbContext.SaveChangesAsync();

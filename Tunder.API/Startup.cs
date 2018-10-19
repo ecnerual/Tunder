@@ -42,6 +42,7 @@ namespace tunder
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
             services.AddScoped(typeof(IAuthService), typeof(AuthService));
             services.AddScoped(typeof(INotificationService), typeof(NotificationService));
+            services.AddScoped(typeof(IThrottleService), typeof(ThrottleService));
 
         }
 
