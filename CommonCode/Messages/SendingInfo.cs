@@ -4,7 +4,7 @@
     {
         public MessageType MessageType { get; protected set; }
 
-        public SendingInfo(MessageType messageType)
+        protected SendingInfo(MessageType messageType)
         {
             MessageType = messageType;
         }

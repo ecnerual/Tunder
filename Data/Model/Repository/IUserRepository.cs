@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Data.Model;
 
 namespace Data.Model.Repository
 {

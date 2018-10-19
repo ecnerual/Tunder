@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CommonCode\CommonCode.csproj" />
-    <ProjectReference Include="..\Tunder\Tunder.API.csproj" />
+    <ProjectReference Include="..\Tunder.API\Tunder.API.csproj" />
   </ItemGroup>
 
 </Project>

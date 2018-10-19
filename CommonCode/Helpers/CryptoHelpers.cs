@@ -27,6 +27,5 @@ namespace CommonCode.Helpers
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8);
         }
-
     }
 }

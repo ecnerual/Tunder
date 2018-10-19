@@ -16,7 +16,6 @@ using Newtonsoft.Json.Serialization;
 using Data.Model.DbContext;
 using Data.Model.Repository;
 using Tunder.API.Services;
-using Tunder.API.Services;
 
 namespace tunder
 {

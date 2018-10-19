@@ -1,10 +1,15 @@
 ﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Data.BusinessObject.Requests;
 using Data.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Data.Model.Repository;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Tunder.API.Services;
 
 namespace Tunder.API.Controllers
@@ -15,11 +20,13 @@ namespace Tunder.API.Controllers
     {
         private readonly IAuthService _authService;
         private readonly IUserRepository _userRepository;
+        private readonly IConfiguration _configs;
 
-        public SessionController(IAuthService authService, IUserRepository userRepository)
+        public SessionController(IAuthService authService, IUserRepository userRepository, IConfiguration configs)
         {
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            _configs = configs;
         }
 
         [HttpPost("register")]
@@ -46,12 +53,36 @@ namespace Tunder.API.Controllers
         {
             User user = await _authService.Login(loginDto.Email, loginDto.Password);
 
-            if (user == null || !user.IsActivited)
+            if (user == null)
             {
                 return Unauthorized();
             }
 
-            return Ok(user);
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Guid.ToString()),
+                new Claim(ClaimTypes.Email, user.Email)
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configs.GetSection("AppSettings:token").Value));
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var tokenDescriptor = new SecurityTokenDescriptor()
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.Now.AddDays(10),
+                SigningCredentials = creds
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            return Ok(new
+            {
+                token = tokenHandler.WriteToken(token)
+            });
         }
         /*
         [HttpDelete("logout")]

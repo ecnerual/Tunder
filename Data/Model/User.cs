@@ -19,8 +19,6 @@ namespace Data.Model
         [JsonIgnore]
         public string AuthToken { get; set; }
         [JsonIgnore]
-        public bool IsActivited { get; set; }
-        [JsonIgnore]
         public string ActivationToken { get; set; }
 
         public static User From(UserRegisterDto userDto, byte[] hashedPassword, byte[] salt)
@@ -31,7 +29,8 @@ namespace Data.Model
                 Sex = userDto.Sexe,
                 Email = userDto.Email.ToLower(),
                 HashedPassword = hashedPassword,
-                Salt = salt
+                Salt = salt,
+                BirthDateTime = userDto.DateOfBirth
             };
         }
     }
