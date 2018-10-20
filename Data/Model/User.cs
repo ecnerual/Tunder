@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using Data.BusinessObject.Requests;
 using Data.Model;
 using Data.Model.Enums;
@@ -20,6 +21,8 @@ namespace Data.Model
         public string AuthToken { get; set; }
         [JsonIgnore]
         public string ActivationToken { get; set; }
+
+        public ICollection<Match> Matches { get; set; }
 
         public static User From(UserRegisterDto userDto, byte[] hashedPassword, byte[] salt)
         {

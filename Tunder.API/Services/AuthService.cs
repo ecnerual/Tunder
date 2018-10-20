@@ -4,7 +4,6 @@ using CommonCode.Helpers;
 using Data.BusinessObject.Requests;
 using Data.Model;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
-using Data.Model;
 using Data.Model.Repository;
 
 namespace Tunder.API.Services
@@ -28,7 +27,10 @@ namespace Tunder.API.Services
 
             User newUser = User.From(userDto, hashedPassword, salt);
 
-            return await _userRepository.CreateUser(newUser);
+            await _userRepository.CreateUser(newUser);
+            await _userRepository.Save();
+
+            return newUser;
         }
 
         public async Task<User> Login(string email, string password)

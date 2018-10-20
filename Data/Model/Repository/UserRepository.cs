@@ -15,7 +15,7 @@ namespace Data.Model.Repository
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
-        
+
         public async Task<User> GetById(long id)
         {
             return await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
@@ -34,7 +34,6 @@ namespace Data.Model.Repository
         public async Task<User> CreateUser(User user)
         {
             await _dbContext.Users.AddAsync(user);
-            await _dbContext.SaveChangesAsync();
             return user;
         }
 
@@ -43,9 +42,9 @@ namespace Data.Model.Repository
             throw new NotImplementedException();
         }
 
-        public void Save()
+        public Task Save()
         {
-            _dbContext.SaveChangesAsync();
+           return _dbContext.SaveChangesAsync();
         }
     }
 }
