@@ -11,6 +11,7 @@ using Tunder.API.Controllers;
 using Tunder.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using SQLitePCL;
 
 namespace Tunder.API.Tests.Controllers
 {
@@ -20,6 +21,7 @@ namespace Tunder.API.Tests.Controllers
         private Mock<IAuthService> _authServiceMock;
         private Mock<IUserRepository> _userRepoMock;
         private Mock<IConfiguration> _config;
+        private Mock<INotificationService> _notifsMock;
 
         [TestInitialize]
         public void Init()
@@ -27,6 +29,7 @@ namespace Tunder.API.Tests.Controllers
             _authServiceMock = new Mock<IAuthService>();
             _userRepoMock = new Mock<IUserRepository>();
             _config = new Mock<IConfiguration>();
+            _notifsMock = new Mock<INotificationService>();
         }
 
         #region LOGIN
@@ -39,12 +42,26 @@ namespace Tunder.API.Tests.Controllers
             _authServiceMock.Setup(authS => authS.Login(It.IsAny<string>(), It.IsAny<string>()))
                         .ReturnsAsync(user);
 
-            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object);
+            var controller = GetController();
 
 
             var loginResult = await controller.Login(new LoginDto());
 
             Assert.IsInstanceOfType(loginResult, typeof(UnauthorizedResult));
+        }
+
+        [TestMethod]
+        public async Task LoginOK()
+        {
+            User user = new User();
+            _authServiceMock.Setup(authS => authS.Login(It.IsAny<string>(), It.IsAny<string>()))
+                .ReturnsAsync(user);
+
+            var controller = GetController();
+
+            var loginResult = await controller.Login(new LoginDto());
+            
+            Assert.IsInstanceOfType(loginResult, typeof(OkObjectResult));
         }
 
         #endregion
@@ -57,7 +74,7 @@ namespace Tunder.API.Tests.Controllers
             _userRepoMock.Setup(userRepo => userRepo.UserExists(It.IsAny<string>()))
                          .ReturnsAsync(true);
 
-            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object);
+            var controller = GetController();
 
             var registerResult = await controller.Register(new UserRegisterDto() { Email = "bonjourMadame" });
             Assert.IsInstanceOfType(registerResult, typeof(BadRequestResult));
@@ -75,7 +92,7 @@ namespace Tunder.API.Tests.Controllers
             _userRepoMock.Setup(userRepo => userRepo.UserExists(upperEmail))
                          .ReturnsAsync(false);
 
-            var controller = new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object);
+            var controller = GetController();
 
             var userDto = new UserRegisterDto
             {
@@ -87,5 +104,10 @@ namespace Tunder.API.Tests.Controllers
         }
 
         #endregion
+
+        private SessionController GetController()
+        {
+           return new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object, _notifsMock.Object);
+        }
     }
 }

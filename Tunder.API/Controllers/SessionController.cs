@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CommonCode.Code.Builders;
 using CommonCode.Helpers;
+using CommonCode.Messages.ViewModels;
 using Data.BusinessObject.Requests;
 using Data.Model;
 using Microsoft.AspNetCore.Http;
@@ -49,11 +50,8 @@ namespace Tunder.API.Controllers
 
             User user = await _authService.Register(userDto);
 
-            var confirmEmail = new MessageBuilder(user, "welcome")
-                .SendAsEmail("title")
-                .GetInstance();
-
-            await _notificationService.SendNotification(confirmEmail);
+            await _notificationService.SendWelcomeMessage(user);
+            
             return Created("user/me", user);
         }
 

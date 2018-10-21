@@ -23,8 +23,13 @@
         <e p="Messages" t="Include">
           <e p="BaseMessage.cs" t="Include" />
           <e p="EmailSendingInfo.cs" t="Include" />
+          <e p="InAppSendingInfo.cs" t="Include" />
           <e p="MessageType.cs" t="Include" />
           <e p="SendingInfo.cs" t="Include" />
+          <e p="ViewModels" t="Include">
+            <e p="WelcomeMEssage.cs" t="Include" />
+          </e>
+          <e p="Views" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
