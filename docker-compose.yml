@@ -19,3 +19,11 @@ services:
     ports:
       - target: 1433
         published: 1433
+  redis:
+    build:
+      context: infra/redis/
+      dockerfile: Dockerfile     
+    ports:
+      - target: 6379
+        published: 6379
+
