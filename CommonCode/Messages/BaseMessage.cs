@@ -6,5 +6,10 @@ namespace CommonCode.Messages
     {
         public ICollection<SendingInfo> Recipients { get; set; }
         public string Content { get; set; }
+
+        public BaseMessage(string content)
+        {
+            Content = content;
+        }
     }
 }

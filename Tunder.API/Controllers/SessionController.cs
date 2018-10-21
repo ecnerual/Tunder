@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using CommonCode.Code.Builders;
 using CommonCode.Helpers;
 using Data.BusinessObject.Requests;
 using Data.Model;
@@ -22,12 +23,16 @@ namespace Tunder.API.Controllers
         private readonly IAuthService _authService;
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configs;
+        private readonly INotificationService _notificationService;
 
-        public SessionController(IAuthService authService, IUserRepository userRepository, IConfiguration configs)
+
+        public SessionController(IAuthService authService, IUserRepository userRepository, IConfiguration configs,
+            INotificationService notificationService)
         {
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
-            _configs = configs;
+            _configs = configs ?? throw new ArgumentNullException(nameof(configs));
+            _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService));
         }
 
         [HttpPost("register")]
@@ -44,6 +49,11 @@ namespace Tunder.API.Controllers
 
             User user = await _authService.Register(userDto);
 
+            var confirmEmail = new MessageBuilder(user, "welcome")
+                .SendAsEmail("title")
+                .GetInstance();
+
+            await _notificationService.SendNotification(confirmEmail);
             return Created("user/me", user);
         }
 
@@ -65,7 +75,7 @@ namespace Tunder.API.Controllers
                 new Claim(ClaimTypes.Email, user.Email)
             };
 
-            var key =  CryptoHelpers.GetSymmetricSecurityKey(_configs);
+            var key = CryptoHelpers.GetSymmetricSecurityKey(_configs);
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -85,6 +95,7 @@ namespace Tunder.API.Controllers
                 token = tokenHandler.WriteToken(token)
             });
         }
+
         /*
         [HttpDelete("logout")]
         [ProducesResponseType(204)]

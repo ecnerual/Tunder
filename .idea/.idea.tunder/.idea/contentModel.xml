@@ -10,6 +10,12 @@
       <e p="CommonCode" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Class1.cs" t="Include" />
+        <e p="Code" t="Include">
+          <e p="Builders" t="Include">
+            <e p="IBuilder.cs" t="Include" />
+            <e p="MessageBuilder.cs" t="Include" />
+          </e>
+        </e>
         <e p="CommonCode.csproj" t="IncludeRecursive" />
         <e p="Helpers" t="Include">
           <e p="CryptoHelpers.cs" t="Include" />
@@ -36,7 +42,6 @@
             <e p="UserDto.cs" t="Include" />
           </e>
         </e>
-        <e p="Class1.cs" t="Include" />
         <e p="Data.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
           <e p="20181017214208_Init.cs" t="Include" />

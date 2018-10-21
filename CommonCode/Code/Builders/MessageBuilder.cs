@@ -11,13 +11,13 @@ namespace CommonCode.Code.Builders
         private readonly User _user;
         private readonly BaseMessage _baseMessage;
 
-        public MessageBuilder(User user)
+        public MessageBuilder(User user, string content)
         {
             _user = user;
-            _baseMessage = new BaseMessage();
+            _baseMessage = new BaseMessage(content);
         }
 
-        public MessageBuilder SendEmail(string title)
+        public MessageBuilder SendAsEmail(string title)
         {
             _baseMessage.Recipients.Add(new EmailSendingInfo(_user.Email, title));
             return this;
@@ -25,7 +25,7 @@ namespace CommonCode.Code.Builders
 
         public BaseMessage GetInstance()
         {
-            throw new NotImplementedException();
+            return _baseMessage;
         }
     }
 }
