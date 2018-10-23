@@ -12,11 +12,6 @@ namespace Tunder.API.Services
 {
     public class NotificationService : INotificationService
     {
-        public Task SendNotification(BaseMessage message)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task SendWelcomeMessage(User user)
         {
             var confirmEmail = new MessageBuilder<WelcomeMessage>(user, WelcomeMessage.From(user))

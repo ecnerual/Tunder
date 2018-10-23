@@ -69,7 +69,9 @@ namespace Tunder.API.Services
 
         public async Task<long> GetValueFromKey(string key)
         {
-            return await _redisDb.Value.StringGetAsync(key) ?? 0L;
+            var value = await _redisDb.Value.StringGetAsync(key);
+
+            return (long)value;
         }
     }
 }

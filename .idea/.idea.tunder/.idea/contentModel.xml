@@ -29,7 +29,6 @@
           <e p="ViewModels" t="Include">
             <e p="WelcomeMEssage.cs" t="Include" />
           </e>
-          <e p="Views" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -115,7 +114,9 @@
         </e>
         <e p="Services" t="Include">
           <e p="AuthService.cs" t="Include" />
+          <e p="CachingService.cs" t="Include" />
           <e p="IAuthService.cs" t="Include" />
+          <e p="ICachingService.cs" t="Include" />
           <e p="INotificationService.cs" t="Include" />
           <e p="IThrottleService.cs" t="Include" />
           <e p="NotificationService.cs" t="Include" />

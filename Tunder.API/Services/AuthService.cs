@@ -37,7 +37,7 @@ namespace Tunder.API.Services
         {
             User user = await _userRepository.GetByEmail(email);
 
-            if (user == null || await _throttleService.GetFailLoginFailAttempt(user) >= 5)
+            if (user == null || await _throttleService.GetFailLoginAttempt(user) >= 5)
             {
                 return null;
             }
@@ -46,7 +46,7 @@ namespace Tunder.API.Services
 
             if (!validPassword)
             {
-                _throttleService.LogFailLoginAttempt(user);
+                await _throttleService.LogFailLoginAttempt(user);
                 return null;
             }
 

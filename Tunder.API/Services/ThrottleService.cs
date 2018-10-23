@@ -22,6 +22,7 @@ namespace Tunder.API.Services
 
         public Task<long> GetFailLoginAttempt(User user)
         {
+            return _cachingService.GetValueFromKey(user.Email);
         }
     }
 }
