@@ -1,18 +1,27 @@
 ﻿using System.Threading.Tasks;
 using Data.Model;
+using Microsoft.Extensions.Configuration;
 
 namespace Tunder.API.Services
 {
     public class ThrottleService : IThrottleService
     {
-        public void LogFailLoginAttempt(User user)
+        private readonly ICachingService _cachingService;
+        private readonly IConfiguration _configs;
+
+        public ThrottleService(ICachingService cachingService, IConfiguration configs)
         {
-            //TODO log by email / ip ?  distributed cache !
+            _cachingService = cachingService;
+            _configs = configs;
         }
 
-        public Task<int> GetFailLoginFailAttempt(User user)
+        public async Task<long> LogFailLoginAttempt(User user)
         {
-            return new Task<int>(() => 1);
+            return await _cachingService.IncrementValueFromKey(user.Email);
+        }
+
+        public Task<long> GetFailLoginAttempt(User user)
+        {
         }
     }
 }

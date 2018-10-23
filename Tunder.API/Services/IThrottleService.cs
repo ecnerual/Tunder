@@ -5,7 +5,7 @@ namespace Tunder.API.Services
 {
     public interface IThrottleService
     {
-        void LogFailLoginAttempt(User user);
-        Task<int> GetFailLoginFailAttempt(User user);
+        Task<long> LogFailLoginAttempt(User user);
+        Task<long> GetFailLoginAttempt(User user);
     }
 }
