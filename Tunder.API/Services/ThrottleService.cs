@@ -20,9 +20,9 @@ namespace Tunder.API.Services
             return await _cachingService.IncrementValueFromKey(user.Email);
         }
 
-        public Task<long> GetFailLoginAttempt(User user)
+        public async Task<long> GetFailLoginAttempt(User user)
         {
-            return _cachingService.GetValueFromKey(user.Email);
+            return await _cachingService.GetValueFromKey(user.Email);
         }
     }
 }

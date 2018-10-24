@@ -22,7 +22,8 @@ namespace Data.Model
         [JsonIgnore]
         public string ActivationToken { get; set; }
 
-        public ICollection<Match> Matches { get; set; }
+        public ICollection<MatchAction> MatchActionsTo { get; set; }
+        public ICollection<MatchAction> MatchActionsFrom { get; set; }
 
         public static User From(UserRegisterDto userDto, byte[] hashedPassword, byte[] salt)
         {

@@ -63,7 +63,7 @@ Give an example
 How to add a migration!
 
 ```
-	dotnet ef migrations add {MigrationName} --startup-project ./Tunder/ --project ./Data/
+	dotnet ef migrations add {MigrationName} --startup-project ./Tunder.API/ --project ./Data/
 ```
 
 How to update your DB :
