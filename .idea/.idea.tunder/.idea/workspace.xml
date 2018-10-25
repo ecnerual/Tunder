@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fcad28c-6879-4d0e-8a26-9944eaea88bc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.tunder/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tunder/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.tunder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tunder/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tunder.API/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tunder.API/Services/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tunder.API/Services/CachingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tunder.API/Services/CachingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tunder.API/Services/NotificationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tunder.API/Services/NotificationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tunder.API/Services/ThrottleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tunder.API/Services/ThrottleService.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,11 +53,10 @@
       <file leaf-file-name="AuthService.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tunder.API/Services/AuthService.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
+            <state relative-caret-position="630">
               <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
               <folding>
                 <marker date="1540257184000" expanded="false" signature="6:206" ph="..." />
-                <marker date="1540257184000" expanded="true" signature="237:2023" ph="{...}" />
                 <marker date="1540257184000" expanded="true" signature="283:2021" ph="{...}" />
                 <marker date="1540257184000" expanded="true" signature="501:734" ph="{...}" />
                 <marker date="1540257184000" expanded="true" signature="801:1152" ph="{...}" />
@@ -80,7 +76,6 @@
             <state relative-caret-position="60">
               <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding>
-                <marker date="1540145880000" expanded="true" signature="64:369" ph="{...}" />
                 <marker date="1540145880000" expanded="true" signature="98:367" ph="{...}" />
                 <marker date="1540145880000" expanded="true" signature="247:361" ph="{...}" />
               </folding>
@@ -116,14 +111,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SessionController.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tunder.API/Controllers/SessionController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+              <folding>
+                <marker date="1540148637000" expanded="false" signature="6:482" ph="..." />
+                <marker date="1540148637000" expanded="true" signature="516:3548" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="622:3546" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="1027:1452" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="1663:2054" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="1792:1857" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="2242:3290" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="2368:2435" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="2480:2627" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="2872:3036" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="3208:3278" ph="{...}" />
+                <marker date="1540148637000" expanded="true" signature="3300:3540" ph="/* [HttpDelete(&quot;logout&quot;)] ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tunder.API/Startup.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="830">
-              <caret line="81" column="93" selection-start-line="81" selection-start-column="93" selection-end-line="81" selection-end-column="93" />
+            <state relative-caret-position="495">
+              <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
               <folding>
                 <marker date="1539990622000" expanded="false" signature="6:714" ph="..." />
-                <marker date="1539990622000" expanded="true" signature="732:3165" ph="{...}" />
                 <marker date="1539990622000" expanded="true" signature="759:3163" ph="{...}" />
                 <marker date="1539990622000" expanded="true" signature="818:881" ph="{...}" />
                 <marker date="1539990622000" expanded="true" signature="1104:2451" ph="{...}" />
@@ -137,43 +154,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThrottleService.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tunder.API/Services/ThrottleService.cs">
+      <file leaf-file-name="CryptoHelpers.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CommonCode/Helpers/CryptoHelpers.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+            <state relative-caret-position="495">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
               <folding>
-                <marker date="1540257031000" expanded="false" signature="6:89" ph="..." />
-                <marker date="1540257031000" expanded="true" signature="120:784" ph="{...}" />
-                <marker date="1540257031000" expanded="true" signature="174:782" ph="{...}" />
-                <marker date="1540257031000" expanded="true" signature="376:474" ph="{...}" />
-                <marker date="1540257031000" expanded="true" signature="538:634" ph="{...}" />
-                <marker date="1540257031000" expanded="true" signature="692:776" ph="{...}" />
+                <marker date="1540257332000" expanded="true" signature="6:189" ph="..." />
+                <marker date="1540257332000" expanded="true" signature="259:1086" ph="{...}" />
+                <marker date="1540257332000" expanded="true" signature="305:522" ph="{...}" />
+                <marker date="1540257332000" expanded="true" signature="422:486" ph="{...}" />
+                <marker date="1540257332000" expanded="true" signature="595:852" ph="{...}" />
+                <marker date="1540257332000" expanded="true" signature="944:1080" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CachingService.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tunder.API/Services/CachingService.cs">
+      <file leaf-file-name="ThrottleService.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tunder.API/Services/ThrottleService.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-              <folding>
-                <marker date="1540256971000" expanded="false" signature="6:258" ph="..." />
-                <marker date="1540256971000" expanded="true" signature="289:2324" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="341:2322" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="684:1161" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="798:1062" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="908:1030" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="1255:1568" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="1342:1445" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="1665:1982" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="1691:1837" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="1869:1972" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="2049:2136" ph="{...}" />
-                <marker date="1540256971000" expanded="true" signature="2197:2316" ph="{...}" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -181,7 +183,7 @@
       <file leaf-file-name="IDatabaseAsync.cs" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19E2C4A4-6CFE-4C42-A5F0-760301FDBBCB/66/2d505258/IDatabaseAsync.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
+            <state>
               <caret line="304" column="13" selection-start-line="304" selection-start-column="13" selection-end-line="304" selection-end-column="13" />
             </state>
           </provider>
@@ -194,22 +196,7 @@
               <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
               <folding>
                 <marker date="1540155111000" expanded="false" signature="6:74" ph="..." />
-                <marker date="1540155111000" expanded="true" signature="105:207" ph="{...}" />
                 <marker date="1540155111000" expanded="true" signature="149:205" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IThrottleService.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tunder.API/Services/IThrottleService.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <marker date="1540255667000" expanded="false" signature="6:47" ph="..." />
-                <marker date="1540255667000" expanded="true" signature="78:234" ph="{...}" />
-                <marker date="1540255667000" expanded="true" signature="118:232" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -239,16 +226,16 @@
     <setting file="file://$PROJECT_DIR$/Tunder.API/Services/CachingService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CommonCode/Class1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tunder.API/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CommonCode/Messages/BaseMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CommonCode/Messages/BaseMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CommonCode/Messages/MessageType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CommonCode/Messages/SendingInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CommonCode/Messages/EmailSendingInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tunder.API.Tests/Controllers/SessionControllerTest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CommonCode/Helpers/CryptoHelpers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CommonCode/Helpers/CryptoHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CommonCode/Code/Builders/MessageBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/BusinessObject/DTO/LoginDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/ThrottleService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tunder.API/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/ThrottleService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder.API/Startup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tunder.API/Services/IThrottleService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F01EB4C9-D938-46F0-9C00-BE59D54339E9/15/657f22e3/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CommonCode/Messages/ViewModels/WelcomeMessage.cs" root0="SKIP_HIGHLIGHTING" />
@@ -258,15 +245,13 @@
     <setting file="file://$PROJECT_DIR$/Data/Model/Repository/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/Model/Repository/IUserRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Data/BusinessObject/DTO/UserDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/IAuthService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/NotificationService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/IAuthService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/NotificationService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19E2C4A4-6CFE-4C42-A5F0-760301FDBBCB/66/2d505258/IDatabaseAsync.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/AuthService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/INotificationService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tunder.API/Services/INotificationService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tunder.API/Controllers/SessionController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Data/Model/Match.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tunder.API/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Data/Model/Enums/MatchStatus.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -291,7 +276,6 @@
         <option value="$PROJECT_DIR$/Data/Model/Match.cs" />
         <option value="$PROJECT_DIR$/Tunder.API/Controllers/MatchController.cs" />
         <option value="$PROJECT_DIR$/Tunder.API/Startup.cs" />
-        <option value="$PROJECT_DIR$/CommonCode/Helpers/CryptoHelpers.cs" />
         <option value="$PROJECT_DIR$/CommonCode/Messages/SendingInfo.cs" />
         <option value="$PROJECT_DIR$/CommonCode/Messages/BaseMessage.cs" />
         <option value="$PROJECT_DIR$/CommonCode/Messages/ViewModel.cs" />
@@ -307,6 +291,7 @@
         <option value="$PROJECT_DIR$/Tunder.API/Services/ThrottleService.cs" />
         <option value="$PROJECT_DIR$/Tunder.API/Services/AuthService.cs" />
         <option value="$PROJECT_DIR$/Tunder.API/Services/NotificationService.cs" />
+        <option value="$PROJECT_DIR$/CommonCode/Helpers/CryptoHelpers.cs" />
       </list>
     </option>
   </component>
@@ -316,8 +301,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/TunderSPA/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/TunderSPA/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
@@ -333,7 +322,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -341,21 +329,11 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="tunder (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="tunder (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Tunder.API" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="tunder (5 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Tunder.API" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Services" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="FileSystemExplorer" />
     </panes>
   </component>
@@ -378,7 +356,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Project.Default">
+  <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/Tunder/bin/Debug/netcoreapp2.1/tunder.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -398,9 +376,6 @@
       <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.1" />
       <browser start="true" url="https://localhost:5001" />
     </configuration>
-    <list>
-      <item itemvalue=".NET Project.Default" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -437,15 +412,15 @@
       <window_info anchor="bottom" id="Unit Tests" order="10" weight="0.32827586" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="REST Client" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="NuGet" order="7" weight="0.32965517" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28675282" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29159936" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -529,31 +504,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Model/Match.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Model/Enums/MatchStatus.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Model/Match.cs" />
+    <entry file="file://$PROJECT_DIR$/Data/Model/Enums/MatchStatus.cs" />
     <entry file="file://$PROJECT_DIR$/Tunder.API/Controllers/MatchController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommonCode/Helpers/CryptoHelpers.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -587,12 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <marker date="1540148356000" expanded="false" signature="6:47" ph="..." />
-            <marker date="1540148356000" expanded="true" signature="123:353" ph="{...}" />
-            <marker date="1540148356000" expanded="true" signature="224:346" ph="{...}" />
-            <marker date="1540148356000" expanded="true" signature="287:335" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -600,32 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding>
-            <marker date="1539909040000" expanded="true" signature="6:66" ph="..." />
-            <marker date="1539909040000" expanded="true" signature="97:406" ph="{...}" />
-            <marker date="1539909040000" expanded="true" signature="147:404" ph="{...}" />
-            <marker date="1539909040000" expanded="true" signature="324:398" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tunder.API/Controllers/SessionController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
-          <folding>
-            <marker date="1540148637000" expanded="false" signature="6:482" ph="..." />
-            <marker date="1540148637000" expanded="true" signature="622:3546" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="1027:1452" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="1663:2054" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="1792:1857" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="2242:3290" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="2368:2435" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="2480:2627" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="2872:3036" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="3208:3278" ph="{...}" />
-            <marker date="1540148637000" expanded="true" signature="3300:3540" ph="/* [HttpDelete(&quot;logout&quot;)] ... */" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -633,16 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
-          <folding>
-            <marker date="1540154970000" expanded="false" signature="6:373" ph="..." />
-            <marker date="1540154970000" expanded="true" signature="487:3402" ph="{...}" />
-            <marker date="1540154970000" expanded="true" signature="754:998" ph="{...}" />
-            <marker date="1540154970000" expanded="true" signature="1008:1962" ph="LOGIN" />
-            <marker date="1540154970000" expanded="true" signature="1098:1489" ph="{...}" />
-            <marker date="1540154970000" expanded="true" signature="1547:1942" ph="{...}" />
-            <marker date="1540154970000" expanded="false" signature="1972:3201" ph="REGISTER!" />
-            <marker date="1540154970000" expanded="true" signature="3252:3396" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -650,10 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding>
-            <marker date="1540149110000" expanded="true" signature="79:261" ph="{...}" />
-            <marker date="1540149110000" expanded="true" signature="206:255" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,46 +571,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <marker date="1540149003000" expanded="false" signature="6:157" ph="..." />
-            <marker date="1540149003000" expanded="true" signature="193:1134" ph="{...}" />
-            <marker date="1540149003000" expanded="true" signature="257:1132" ph="{...}" />
-            <marker date="1540149003000" expanded="true" signature="407:509" ph="{...}" />
-            <marker date="1540149003000" expanded="true" signature="569:697" ph="{...}" />
-            <marker date="1540149003000" expanded="true" signature="743:861" ph="{...}" />
-            <marker date="1540149003000" expanded="true" signature="906:1126" ph="{...}" />
-            <marker date="1540149003000" expanded="true" signature="964:1070" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tunder.API/Services/ICachingService.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1540255667000" expanded="false" signature="6:43" ph="..." />
-            <marker date="1540255667000" expanded="true" signature="74:306" ph="{...}" />
-            <marker date="1540255667000" expanded="true" signature="113:304" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Tunder.API/Services/IThrottleService.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <marker date="1540255667000" expanded="false" signature="6:47" ph="..." />
-            <marker date="1540255667000" expanded="true" signature="78:234" ph="{...}" />
-            <marker date="1540255667000" expanded="true" signature="118:232" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19E2C4A4-6CFE-4C42-A5F0-760301FDBBCB/66/2d505258/IDatabaseAsync.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="304" column="13" selection-start-line="304" selection-start-column="13" selection-end-line="304" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -708,36 +588,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding>
-            <marker date="1540256971000" expanded="false" signature="6:258" ph="..." />
-            <marker date="1540256971000" expanded="true" signature="289:2324" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="341:2322" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="684:1161" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="798:1062" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="908:1030" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="1255:1568" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="1342:1445" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="1665:1982" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="1691:1837" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="1869:1972" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="2049:2136" ph="{...}" />
-            <marker date="1540256971000" expanded="true" signature="2197:2316" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tunder.API/Services/ThrottleService.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="360">
           <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
-          <folding>
-            <marker date="1540257031000" expanded="false" signature="6:89" ph="..." />
-            <marker date="1540257031000" expanded="true" signature="120:784" ph="{...}" />
-            <marker date="1540257031000" expanded="true" signature="174:782" ph="{...}" />
-            <marker date="1540257031000" expanded="true" signature="376:474" ph="{...}" />
-            <marker date="1540257031000" expanded="true" signature="538:634" ph="{...}" />
-            <marker date="1540257031000" expanded="true" signature="692:776" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -754,11 +611,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tunder.API/Services/AuthService.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
+        <state relative-caret-position="630">
           <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
           <folding>
             <marker date="1540257184000" expanded="false" signature="6:206" ph="..." />
-            <marker date="1540257184000" expanded="true" signature="237:2023" ph="{...}" />
             <marker date="1540257184000" expanded="true" signature="283:2021" ph="{...}" />
             <marker date="1540257184000" expanded="true" signature="501:734" ph="{...}" />
             <marker date="1540257184000" expanded="true" signature="801:1152" ph="{...}" />
@@ -776,7 +632,6 @@
         <state relative-caret-position="60">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
-            <marker date="1540145880000" expanded="true" signature="64:369" ph="{...}" />
             <marker date="1540145880000" expanded="true" signature="98:367" ph="{...}" />
             <marker date="1540145880000" expanded="true" signature="247:361" ph="{...}" />
           </folding>
@@ -789,7 +644,6 @@
           <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding>
             <marker date="1540155111000" expanded="false" signature="6:74" ph="..." />
-            <marker date="1540155111000" expanded="true" signature="105:207" ph="{...}" />
             <marker date="1540155111000" expanded="true" signature="149:205" ph="{...}" />
           </folding>
         </state>
@@ -808,13 +662,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CommonCode/Helpers/CryptoHelpers.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding>
+            <marker date="1540257332000" expanded="true" signature="6:189" ph="..." />
+            <marker date="1540257332000" expanded="true" signature="259:1086" ph="{...}" />
+            <marker date="1540257332000" expanded="true" signature="305:522" ph="{...}" />
+            <marker date="1540257332000" expanded="true" signature="422:486" ph="{...}" />
+            <marker date="1540257332000" expanded="true" signature="595:852" ph="{...}" />
+            <marker date="1540257332000" expanded="true" signature="944:1080" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19E2C4A4-6CFE-4C42-A5F0-760301FDBBCB/66/2d505258/IDatabaseAsync.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="304" column="13" selection-start-line="304" selection-start-column="13" selection-end-line="304" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tunder.API/Startup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="830">
-          <caret line="81" column="93" selection-start-line="81" selection-start-column="93" selection-end-line="81" selection-end-column="93" />
+        <state relative-caret-position="495">
+          <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
           <folding>
             <marker date="1539990622000" expanded="false" signature="6:714" ph="..." />
-            <marker date="1539990622000" expanded="true" signature="732:3165" ph="{...}" />
             <marker date="1539990622000" expanded="true" signature="759:3163" ph="{...}" />
             <marker date="1539990622000" expanded="true" signature="818:881" ph="{...}" />
             <marker date="1539990622000" expanded="true" signature="1104:2451" ph="{...}" />
@@ -823,6 +698,27 @@
             <marker date="1539990622000" expanded="true" signature="2666:3157" ph="{...}" />
             <marker date="1539990622000" expanded="true" signature="2713:2874" ph="{...}" />
             <marker date="1539990622000" expanded="true" signature="2891:2950" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tunder.API/Controllers/SessionController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+          <folding>
+            <marker date="1540148637000" expanded="false" signature="6:482" ph="..." />
+            <marker date="1540148637000" expanded="true" signature="516:3548" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="622:3546" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="1027:1452" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="1663:2054" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="1792:1857" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="2242:3290" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="2368:2435" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="2480:2627" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="2872:3036" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="3208:3278" ph="{...}" />
+            <marker date="1540148637000" expanded="true" signature="3300:3540" ph="/* [HttpDelete(&quot;logout&quot;)] ... */" />
           </folding>
         </state>
       </provider>

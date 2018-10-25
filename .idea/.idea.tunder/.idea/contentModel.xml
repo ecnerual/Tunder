@@ -50,6 +50,8 @@
         <e p="Migrations" t="Include">
           <e p="20181017214208_Init.cs" t="Include" />
           <e p="20181017214208_Init.Designer.cs" t="Include" />
+          <e p="20181024234519_Match.cs" t="Include" />
+          <e p="20181024234519_Match.Designer.cs" t="Include" />
           <e p="TunderDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
@@ -58,10 +60,10 @@
             <e p="TunderDbContext.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
-            <e p="MatchStatus.cs" t="Include" />
+            <e p="MatchActionStatus.cs" t="Include" />
             <e p="Sexes.cs" t="Include" />
           </e>
-          <e p="Match.cs" t="Include" />
+          <e p="MatchAction.cs" t="Include" />
           <e p="ModelBase.cs" t="Include" />
           <e p="Repository" t="Include">
             <e p="IUserRepository.cs" t="Include" />
