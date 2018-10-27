@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using CommonCode.Helpers;
 using Data.BusinessObject.Requests;
@@ -19,7 +20,7 @@ namespace Tunder.API.Services
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
-        public async Task<User> Register(UserRegisterDto userDto)
+        public async Task<User> RegisterAsync(UserRegisterDto userDto)
         {
             var salt = CryptoHelpers.GetSalt();
 
@@ -33,20 +34,20 @@ namespace Tunder.API.Services
             return newUser;
         }
 
-        public async Task<User> Login(string email, string password)
+        public async Task<User> LoginAsync(string email, string password)
         {
             User user = await _userRepository.GetByEmail(email);
 
-            if (user == null || await _throttleService.GetFailLoginAttempt(user) >= 5)
+            if (user == null || await _throttleService.GetFailLoginAttemptAsync(user) >= 5)
             {
                 return null;
             }
 
-            var validPassword = user.HashedPassword == CryptoHelpers.HashPassword(password, user.Salt);
+            var validPassword = user.HashedPassword.SequenceEqual(CryptoHelpers.HashPassword(password, user.Salt));
 
             if (!validPassword)
             {
-                await _throttleService.LogFailLoginAttempt(user);
+                await _throttleService.LogFailLoginAttemptAsync(user);
                 return null;
             }
 

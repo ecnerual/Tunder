@@ -21,7 +21,7 @@ namespace Tunder.API.Tests.Controllers
         private Mock<IAuthService> _authServiceMock;
         private Mock<IUserRepository> _userRepoMock;
         private Mock<IConfiguration> _config;
-        private Mock<INotificationService> _notifsMock;
+        private Mock<INotificationService> _notificationServiceMock;
 
         [TestInitialize]
         public void Init()
@@ -29,7 +29,7 @@ namespace Tunder.API.Tests.Controllers
             _authServiceMock = new Mock<IAuthService>();
             _userRepoMock = new Mock<IUserRepository>();
             _config = new Mock<IConfiguration>();
-            _notifsMock = new Mock<INotificationService>();
+            _notificationServiceMock = new Mock<INotificationService>();
         }
 
         #region LOGIN
@@ -39,7 +39,7 @@ namespace Tunder.API.Tests.Controllers
         {
             User user = null;
 
-            _authServiceMock.Setup(authS => authS.Login(It.IsAny<string>(), It.IsAny<string>()))
+            _authServiceMock.Setup(authS => authS.LoginAsync(It.IsAny<string>(), It.IsAny<string>()))
                         .ReturnsAsync(user);
 
             var controller = GetController();
@@ -51,16 +51,16 @@ namespace Tunder.API.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task LoginOK()
+        public async Task LoginOk()
         {
             User user = new User();
-            _authServiceMock.Setup(authS => authS.Login(It.IsAny<string>(), It.IsAny<string>()))
+            _authServiceMock.Setup(authS => authS.LoginAsync(It.IsAny<string>(), It.IsAny<string>()))
                 .ReturnsAsync(user);
 
             var controller = GetController();
 
             var loginResult = await controller.Login(new LoginDto());
-            
+
             Assert.IsInstanceOfType(loginResult, typeof(OkObjectResult));
         }
 
@@ -107,7 +107,7 @@ namespace Tunder.API.Tests.Controllers
 
         private SessionController GetController()
         {
-           return new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object, _notifsMock.Object);
+            return new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object, _notificationServiceMock.Object);
         }
     }
 }

@@ -12,13 +12,13 @@ namespace Tunder.API.Services
 {
     public class NotificationService : INotificationService
     {
-        public Task SendWelcomeMessage(User user)
+        public async Task<bool> SendWelcomeMessageAsync(User user)
         {
             var confirmEmail = new MessageBuilder<WelcomeMessage>(user, WelcomeMessage.From(user))
                 .SendAsEmail("title")
                 .GetInstance();
 
-            return null;
+            return await Task.Run(() => true);
         }
     }
 }

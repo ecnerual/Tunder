@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using CommonCode.Helpers;
 using Microsoft.AspNetCore.Builder;
@@ -57,10 +58,14 @@ namespace tunder
                 });
 
             //DI
+
+
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+
             services.AddScoped(typeof(IAuthService), typeof(AuthService));
             services.AddScoped(typeof(INotificationService), typeof(NotificationService));
             services.AddScoped(typeof(IThrottleService), typeof(ThrottleService));
+            services.AddScoped(typeof(ICachingService), typeof(CachingService));
 
         }
 

@@ -6,6 +6,6 @@ namespace Tunder.API.Services
 {
     public interface INotificationService
     {
-        Task SendWelcomeMessage(User user);
+        Task<bool> SendWelcomeMessageAsync(User user);
     }
 }

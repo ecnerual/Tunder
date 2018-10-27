@@ -10,5 +10,6 @@ namespace Data.Model
         public long LikedID { get; set; }
         public virtual User Liked { get; set; }
 
+        public MatchActionStatus Status { get; set; }
     }
 }

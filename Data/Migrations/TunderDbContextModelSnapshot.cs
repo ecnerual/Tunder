@@ -66,12 +66,12 @@ namespace Data.Migrations
                     b.HasOne("Data.Model.User", "Liked")
                         .WithMany("MatchActionsFrom")
                         .HasForeignKey("LikedID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("Data.Model.User", "Liker")
                         .WithMany("MatchActionsTo")
                         .HasForeignKey("LikerID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 #pragma warning restore 612, 618
         }

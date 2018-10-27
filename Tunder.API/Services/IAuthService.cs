@@ -6,8 +6,8 @@ namespace Tunder.API.Services
 {
     public interface IAuthService
     {
-        Task<User> Register(UserRegisterDto userDto);
-        Task<User> Login(string email, string password);
+        Task<User> RegisterAsync(UserRegisterDto userDto);
+        Task<User> LoginAsync(string email, string password);
         Task<User> Logout(string email, string password);
         Task<User> ResumeSession(byte[] authToken);
     }

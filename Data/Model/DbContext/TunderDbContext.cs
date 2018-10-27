@@ -18,12 +18,14 @@ namespace Data.Model.DbContext
             modelBuilder.Entity<MatchAction>()
                 .HasOne(ma => ma.Liker)
                 .WithMany(u => u.MatchActionsTo)
-                .HasForeignKey(ma => ma.LikerID);
+                .HasForeignKey(ma => ma.LikerID)
+                .OnDelete(DeleteBehavior.SetNull);
 
             modelBuilder.Entity<MatchAction>()
                 .HasOne(m => m.Liked)
                 .WithMany(u => u.MatchActionsFrom)
-                .HasForeignKey(m => m.LikedID);
+                .HasForeignKey(m => m.LikedID)
+                .OnDelete(DeleteBehavior.SetNull);
 
             modelBuilder.Entity<MatchAction>()
                 .HasKey(ma => new

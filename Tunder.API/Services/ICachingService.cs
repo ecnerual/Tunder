@@ -5,8 +5,8 @@ namespace Tunder.API.Services
 {
     public interface ICachingService
     {
-        Task<bool> SetValue(string key, string value, TimeSpan? expireTime);
-        Task<long> IncrementValueFromKey(string key);
-        Task<long> GetValueFromKey(string key);
+        Task<bool> SetValueASync(string key, string value, TimeSpan? expireTime);
+        Task<long> IncrementValueFromKeyAsync(string key);
+        Task<long> GetValueFromKeyAsync(string key);
     }
 }

@@ -48,9 +48,9 @@ namespace Tunder.API.Controllers
                 return BadRequest();
             }
 
-            User user = await _authService.Register(userDto);
+            User user = await _authService.RegisterAsync(userDto);
 
-            await _notificationService.SendWelcomeMessage(user);
+            await _notificationService.SendWelcomeMessageAsync(user);
             
             return Created("user/me", user);
         }
@@ -60,15 +60,14 @@ namespace Tunder.API.Controllers
         [ProducesResponseType(400)]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
-            User user = await _authService.Login(loginDto.Email, loginDto.Password);
+            User user = await _authService.LoginAsync(loginDto.Email, loginDto.Password);
 
             if (user == null)
             {
                 return Unauthorized();
             }
 
-            var claims = new[]
-            {
+            Claim[] claims = {
                 new Claim(ClaimTypes.NameIdentifier, user.Guid.ToString()),
                 new Claim(ClaimTypes.Email, user.Email)
             };
@@ -80,7 +79,7 @@ namespace Tunder.API.Controllers
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(10),
+                Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = creds
             };
 

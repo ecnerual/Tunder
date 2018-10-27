@@ -12,16 +12,16 @@ namespace Tunder.API.Services
     public class CachingService : ICachingService
     {
         private readonly IConfiguration _configs;
-        private readonly ILogger _logger;
+        //private readonly ILogger _logger;
         private static Lazy<ConnectionMultiplexer> _lazyConnection;
         private readonly object _lock = new object();
         private readonly Lazy<IDatabase> _redisDb;
 
 
-        public CachingService(IConfiguration configs, ILogger logger)
+        public CachingService(IConfiguration configs)
         {
             _configs = configs;
-            _logger = logger;
+            //_logger = logger;
 
             if (_lazyConnection == null)
             {
@@ -48,7 +48,7 @@ namespace Tunder.API.Services
             return new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(configurationOptions));
         }
 
-        public async Task<bool> SetValue(string key, string value, TimeSpan? expireTime = null)
+        public async Task<bool> SetValueASync(string key, string value, TimeSpan? expireTime = null)
         {
             try
             {
@@ -57,17 +57,17 @@ namespace Tunder.API.Services
             }
             catch (Exception e)
             {
-                _logger.LogError(1, e, "1");
+                // _logger.LogError(1, e, "1");
                 return false;
             }
         }
 
-        public async Task<long> IncrementValueFromKey(string key)
+        public async Task<long> IncrementValueFromKeyAsync(string key)
         {
             return await _redisDb.Value.StringIncrementAsync(key);
         }
 
-        public async Task<long> GetValueFromKey(string key)
+        public async Task<long> GetValueFromKeyAsync(string key)
         {
             var madame = await _redisDb.Value.StringGetAsync(key);
 

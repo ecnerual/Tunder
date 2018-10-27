@@ -15,14 +15,14 @@ namespace Tunder.API.Services
             _configs = configs;
         }
 
-        public async Task<long> LogFailLoginAttempt(User user)
+        public async Task<long> LogFailLoginAttemptAsync(User user)
         {
-            return await _cachingService.IncrementValueFromKey(user.Email);
+            return await _cachingService.IncrementValueFromKeyAsync(user.Email);
         }
 
-        public async Task<long> GetFailLoginAttempt(User user)
+        public async Task<long> GetFailLoginAttemptAsync(User user)
         {
-            return await _cachingService.GetValueFromKey(user.Email);
+            return await _cachingService.GetValueFromKeyAsync(user.Email);
         }
     }
 }
