@@ -66,7 +66,10 @@
           <e p="MatchAction.cs" t="Include" />
           <e p="ModelBase.cs" t="Include" />
           <e p="Repository" t="Include">
+            <e p="IMatchActionRepository.cs" t="Include" />
+            <e p="IModelBaseEntityRepository.cs" t="Include" />
             <e p="IUserRepository.cs" t="Include" />
+            <e p="MatchActionRepository.cs" t="Include" />
             <e p="UserRepository.cs" t="Include" />
           </e>
           <e p="User.cs" t="Include" />
@@ -130,6 +133,7 @@
       <e p="Tunder.API.Tests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="MatchControllerTest.cs" t="Include" />
           <e p="SessionControllerTest.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

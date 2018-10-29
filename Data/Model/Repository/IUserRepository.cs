@@ -2,9 +2,8 @@
 
 namespace Data.Model.Repository
 {
-    public interface IUserRepository  
+    public interface IUserRepository : IModelBaseEntityRepository
     {
-        Task<User> GetById(long id);
         Task<User> GetByEmail(string email);
         Task<bool> UserExists(string email);
         Task<User> CreateUser(User user);

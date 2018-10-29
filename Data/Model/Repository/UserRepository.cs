@@ -21,6 +21,11 @@ namespace Data.Model.Repository
             return await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
         }
 
+        public async Task<User> GetByGuidAsync(Guid guid)
+        {
+            return await _dbContext.Users.FirstOrDefaultAsync(u => u.Guid == guid);
+        }
+
         public async Task<User> GetByEmail(string email)
         {
             return await _dbContext.Users.FirstOrDefaultAsync(user => user.Email == email);

@@ -10,5 +10,10 @@ namespace Data.Model
         public long LikedID { get; set; }
         public virtual User Liked { get; set; }
 
+        public MatchAction(User liker, User liked)
+        {
+            Liker = liker;
+            Liked = liked;
+        }
     }
 }

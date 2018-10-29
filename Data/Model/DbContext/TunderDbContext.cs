@@ -6,7 +6,7 @@ namespace Data.Model.DbContext
     public class TunderDbContext : Microsoft.EntityFrameworkCore.DbContext, ITunderDbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<MatchAction> Matches { get; set; }
+        public DbSet<MatchAction> MatchActions { get; set; }
 
         public TunderDbContext(DbContextOptions<TunderDbContext> options) : base(options)
         {
