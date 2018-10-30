@@ -29,16 +29,15 @@ namespace Tunder.API.Services
                 {
                     if (_lazyConnection == null)
                     {
-                        _lazyConnection = SetConnectionMultiplexer(_configs);
+                        _lazyConnection = SetConnectionMultiplexer();
                     }
                 }
             }
 
             _redisDb = new Lazy<IDatabase>(() => _lazyConnection.Value.GetDatabase());
-
         }
 
-        private Lazy<ConnectionMultiplexer> SetConnectionMultiplexer(IConfiguration configs)
+        private Lazy<ConnectionMultiplexer> SetConnectionMultiplexer()
         {
             var configurationOptions = new ConfigurationOptions
             {
@@ -69,9 +68,9 @@ namespace Tunder.API.Services
 
         public async Task<long> GetValueFromKeyAsync(string key)
         {
-            var madame = await _redisDb.Value.StringGetAsync(key);
+            var value = await _redisDb.Value.StringGetAsync(key);
 
-            return (long) madame;
+            return (long)value;
         }
     }
 }

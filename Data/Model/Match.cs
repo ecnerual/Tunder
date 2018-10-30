@@ -6,6 +6,6 @@ namespace Data.Model
 {
     public class Match : ModelBase
     {
-        public ICollection<User> MatchesUsers { get; set; }
+        public ICollection<UserMatch> MatchesUsers { get; set; }
     }
 }

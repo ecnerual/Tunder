@@ -29,7 +29,7 @@ namespace Tunder.API.Services
             User newUser = User.From(userDto, hashedPassword, salt);
 
             await _userRepository.CreateUser(newUser);
-            await _userRepository.Save();
+            await _userRepository.SaveAsync();
 
             return newUser;
         }

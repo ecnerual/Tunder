@@ -13,17 +13,15 @@ namespace Data.Model
         public Sexes Sex { get; set; }
         public string Email { get; set; }
         public DateTime BirthDateTime { get; set; }
-        [JsonIgnore]
         public byte[] HashedPassword { get; set; }
-        [JsonIgnore]
         public byte[] Salt { get; set; }
-        [JsonIgnore]
         public string AuthToken { get; set; }
-        [JsonIgnore]
         public string ActivationToken { get; set; }
 
         public ICollection<MatchAction> MatchActionsTo { get; set; }
         public ICollection<MatchAction> MatchActionsFrom { get; set; }
+
+        public ICollection<UserMatch> Matches { get; set; }
 
         public static User From(UserRegisterDto userDto, byte[] hashedPassword, byte[] salt)
         {

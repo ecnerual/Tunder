@@ -11,5 +11,16 @@ namespace Data.Model
         public virtual User Liked { get; set; }
 
         public MatchActionStatus Status { get; set; }
+
+        public MatchAction()
+        {
+        }
+
+        public MatchAction(User liker, User liked, MatchActionStatus status)
+        {
+            Liker = liker;
+            Liked = liked;
+            Status = status;
+        }
     }
 }
