@@ -10,25 +10,25 @@ namespace Data.Migrations
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_Matches_Users_LikedID",
-                table: "Matches");
+                table: "UserMatches");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Matches_Users_LikerID",
-                table: "Matches");
+                table: "UserMatches");
 
             migrationBuilder.RenameColumn(
                 name: "LikedID",
-                table: "Matches",
+                table: "UserMatches",
                 newName: "MatchId");
 
             migrationBuilder.RenameColumn(
                 name: "LikerID",
-                table: "Matches",
+                table: "UserMatches",
                 newName: "UserId");
 
             migrationBuilder.RenameIndex(
                 name: "IX_Matches_LikedID",
-                table: "Matches",
+                table: "UserMatches",
                 newName: "IX_Matches_MatchId");
 
             migrationBuilder.CreateTable(
@@ -76,7 +76,7 @@ namespace Data.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Matches_Match_MatchId",
-                table: "Matches",
+                table: "UserMatches",
                 column: "MatchId",
                 principalTable: "Match",
                 principalColumn: "Id",
@@ -84,7 +84,7 @@ namespace Data.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Matches_Users_UserId",
-                table: "Matches",
+                table: "UserMatches",
                 column: "UserId",
                 principalTable: "Users",
                 principalColumn: "Id",
@@ -95,11 +95,11 @@ namespace Data.Migrations
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_Matches_Match_MatchId",
-                table: "Matches");
+                table: "UserMatches");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Matches_Users_UserId",
-                table: "Matches");
+                table: "UserMatches");
 
             migrationBuilder.DropTable(
                 name: "Match");
@@ -109,22 +109,22 @@ namespace Data.Migrations
 
             migrationBuilder.RenameColumn(
                 name: "MatchId",
-                table: "Matches",
+                table: "UserMatches",
                 newName: "LikedID");
 
             migrationBuilder.RenameColumn(
                 name: "UserId",
-                table: "Matches",
+                table: "UserMatches",
                 newName: "LikerID");
 
             migrationBuilder.RenameIndex(
                 name: "IX_Matches_MatchId",
-                table: "Matches",
+                table: "UserMatches",
                 newName: "IX_Matches_LikedID");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Matches_Users_LikedID",
-                table: "Matches",
+                table: "UserMatches",
                 column: "LikedID",
                 principalTable: "Users",
                 principalColumn: "Id",
@@ -132,7 +132,7 @@ namespace Data.Migrations
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Matches_Users_LikerID",
-                table: "Matches",
+                table: "UserMatches",
                 column: "LikerID",
                 principalTable: "Users",
                 principalColumn: "Id",

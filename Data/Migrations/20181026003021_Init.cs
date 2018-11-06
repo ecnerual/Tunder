@@ -30,7 +30,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Matches",
+                name: "UserMatches",
                 columns: table => new
                 {
                     LikerID = table.Column<long>(nullable: false),
@@ -55,14 +55,14 @@ namespace Data.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Matches_LikedID",
-                table: "Matches",
+                table: "UserMatches",
                 column: "LikedID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Matches");
+                name: "UserMatches");
 
             migrationBuilder.DropTable(
                 name: "Users");

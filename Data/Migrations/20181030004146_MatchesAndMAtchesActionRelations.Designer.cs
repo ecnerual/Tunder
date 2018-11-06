@@ -88,7 +88,7 @@ namespace Data.Migrations
 
                     b.HasIndex("MatchId");
 
-                    b.ToTable("Matches");
+                    b.ToTable("UserMatches");
                 });
 
             modelBuilder.Entity("Data.Model.MatchAction", b =>
@@ -112,7 +112,7 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Data.Model.User", "User")
-                        .WithMany("Matches")
+                        .WithMany("UserMatches")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

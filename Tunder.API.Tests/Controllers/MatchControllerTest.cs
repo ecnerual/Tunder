@@ -16,6 +16,7 @@ namespace Tunder.API.Tests.Controllers
     {
         private Mock<IUserRepository> _userRepositoryMock;
         private Mock<IMatchActionRepository> _matchActionRepositoryMock;
+        private Mock<IMatchRepository> _matchRepositoryMock;
         private string _validGuid = Guid.NewGuid().ToString();
         private CreateMatchActionDTO _validCreateMatchActionDto;
 
@@ -25,6 +26,7 @@ namespace Tunder.API.Tests.Controllers
         {
             _userRepositoryMock = new Mock<IUserRepository>();
             _matchActionRepositoryMock = new Mock<IMatchActionRepository>();
+            _matchRepositoryMock = new Mock<IMatchRepository>();
             _validCreateMatchActionDto = new CreateMatchActionDTO()
             {
                 LikedUserGuid = _validGuid,
@@ -35,7 +37,7 @@ namespace Tunder.API.Tests.Controllers
 
         private MatchController GetTestController()
         {
-            return new MatchController(_userRepositoryMock.Object, _matchActionRepositoryMock.Object);
+            return new MatchController(_userRepositoryMock.Object, _matchActionRepositoryMock.Object, _matchRepositoryMock.Object);
         }
 
 
@@ -55,6 +57,20 @@ namespace Tunder.API.Tests.Controllers
         public async Task MissingLikedUserWill_NotFound()
         {
             User user = null;
+            _userRepositoryMock.Setup(u => u.GetByGuidAsync(It.IsAny<Guid>()))
+                               .ReturnsAsync(user);
+
+            var controller = GetTestController();
+
+            var result = await controller.CreateMatchAction(_validCreateMatchActionDto);
+
+            Assert.IsInstanceOfType(result, typeof(NotFoundResult));
+        }
+
+        [TestMethod]
+        public async Task FullMatchWill_Created()
+        {
+            User user = new User();
             _userRepositoryMock.Setup(u => u.GetByGuidAsync(It.IsAny<Guid>()))
                                .ReturnsAsync(user);
 

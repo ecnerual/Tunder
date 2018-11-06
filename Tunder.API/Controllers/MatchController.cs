@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Data.BusinessObject.DTO;
 using Data.Model;
@@ -14,20 +16,37 @@ namespace Tunder.API.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class MatchController : ControllerBase
+    public class MatchController : BaseAuthController
     {
-        private readonly IUserRepository _userRepository;
         private readonly IMatchActionRepository _matchActionRepository;
+        private readonly IMatchRepository _matchRepository;
 
-        public MatchController(IUserRepository userRepository, IMatchActionRepository matchActionRepository)
+
+        public MatchController(IUserRepository userRepository, IMatchActionRepository matchActionRepository, IMatchRepository matchRepository) : base(userRepository)
         {
-            _userRepository = userRepository;
             _matchActionRepository = matchActionRepository;
+            _matchRepository = matchRepository;
         }
+        /*
+                public async Task<IActionResult> GetUserMatches()
+                {
+                    var currentUser = await GetCurrentUser();
 
-        public async Task<IActionResult> CreateMatchAction(CreateMatchActionDTO user)
+
+                    var matchs = (await _matchRepository.GetUserMatches(currentUser))
+                                                        .OrderByDescending(m => m.MatchedSince)
+                                                        .ToList();
+
+
+
+
+                }
+
+            */
+
+        public async Task<IActionResult> CreateMatchAction(CreateMatchActionDTO createMatchActionDto)
         {
-            if (!Guid.TryParse(user.LikedUserGuid, out Guid likedUserGUid))
+            if (!Guid.TryParse(createMatchActionDto.LikedUserGuid, out Guid likedUserGUid))
             {
                 return BadRequest();
             }
@@ -39,14 +58,22 @@ namespace Tunder.API.Controllers
                 return NotFound();
             }
 
-            var newMatchAction = new MatchAction(null, likedUser, user.MatchActionStatus);
+            var currentUser = await GetCurrentUser();
+            var newMatchAction = new MatchAction(currentUser, likedUser, createMatchActionDto.MatchActionStatus);
 
             newMatchAction = await _matchActionRepository.CreateMatchActionAsync(newMatchAction);
 
             if (await _matchActionRepository.IsFullMatchAsync(newMatchAction))
             {
+                var newMatch = new Match()
+                {
+
+                };
                 //TODO: Make a full match
+                var savedMatch = await _matchRepository.CreateNewMatchAsync(newMatch);
             }
+
+            await _matchRepository.SaveAsync();
 
             return Ok();
         }

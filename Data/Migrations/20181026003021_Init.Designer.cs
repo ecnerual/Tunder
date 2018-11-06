@@ -31,7 +31,7 @@ namespace Data.Migrations
 
                     b.HasIndex("LikedID");
 
-                    b.ToTable("Matches");
+                    b.ToTable("UserMatches");
                 });
 
             modelBuilder.Entity("Data.Model.User", b =>

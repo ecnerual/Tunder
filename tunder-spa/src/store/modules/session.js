@@ -1,8 +1,18 @@
+import { login } from "@/code/ApiService.js";
+
+
 const state = {
   token: null
 };
 
-const actions = {};
+const actions = {
+  login({ commit }, payload) {
+    const { email, password } = payload; 
+    const token = loginApi(email, password);
+
+    commit('setToken', token);
+  }
+};
 
 const getters = {};
 

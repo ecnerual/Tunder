@@ -7,7 +7,8 @@ namespace Data.Model.DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<MatchAction> MatchActions { get; set; }
-        public DbSet<UserMatch> Matches { get; set; }
+        public DbSet<UserMatch> UserMatches { get; set; }
+        public DbSet<Match> Matches { get; set; }
 
         public TunderDbContext(DbContextOptions<TunderDbContext> options) : base(options)
         {
@@ -16,6 +17,12 @@ namespace Data.Model.DbContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            #region Matches
+
+            modelBuilder.Entity<Match>()
+                .HasMany(m => m.MatchesUsers)
+                .WithOne(userMatch => userMatch.Match);
+            #endregion
 
             #region UserMatch
             modelBuilder.Entity<UserMatch>()
