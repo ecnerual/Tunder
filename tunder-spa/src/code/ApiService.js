@@ -1,12 +1,13 @@
 const axios = require('axios');
 
-
-function loginApi(login, password) {
+const loginApi = (login, password) => {
   axios.post('/api/session/login', {
     login,
     password
   })
-  .then(res => console.log(res))
+  .then(res => {
+    console.log(res)
+  })
   .then(res => {
     return "token";
   })

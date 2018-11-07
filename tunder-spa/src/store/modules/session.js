@@ -1,5 +1,4 @@
-import { login } from "@/code/ApiService.js";
-
+import loginApi from "@/code/ApiService.js";
 
 const state = {
   token: null
