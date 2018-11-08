@@ -1,38 +1,31 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Header/>
     <div class="container is-widescreen">
       <router-view/>
     </div>
   </div>
 </template>
 
-<style lang="scss">
-html, body {
-  height:100%;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100%;
-}
-.container {
-  height: 100%;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import Header from '@/components/layout/Header.vue'
+
+export default {
+  name: 'App',
+  components: {
+    Header
   }
+}
+  
+</script>
+
+<style lang="scss">
+
+.container, #app, .view__container, html, body {
+  height: 100%;
+}
+
+.button { 
+  min-width: 90px;
 }
 </style>
