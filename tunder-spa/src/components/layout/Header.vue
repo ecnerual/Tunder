@@ -1,8 +1,10 @@
 <template>
-  <nav class="navbar is-widescreen is-light" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-widescreen" role="navigation" aria-label="main navigation">
 
     <div class="navbar-brand">
-      <router-link class="navbar-item" to="/">Logo</router-link>
+      <router-link class="navbar-item" to="/">
+        <i class="fab fa-algolia fa-2x"></i>
+      </router-link>
 
       <a @click="toggleBurgerActive"
          :class="{'is-active': burgerActive}"
@@ -20,7 +22,7 @@
          :class="{'is-active': burgerActive}">
       <div class="navbar-start">
         <router-link v-for="(link, i) in menuLinks" 
-                     @click="toggleBurgerActive"
+                     @click.native="toggleBurgerActive"
                      class="navbar-item" 
                      :key='i'
                      :to="link.to">{{ link.label }}</router-link>
@@ -29,8 +31,12 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <router-link class="button is-primary" to="/signup">Sign up</router-link>
-            <router-link class="button is-light" to="/login">Login</router-link>
+            <router-link class="button is-primary" 
+                         @click.native="toggleBurgerActive"
+                         to="/signup">Sign up</router-link>
+            <router-link class="button is-light" 
+                         @click.native="toggleBurgerActive"
+                         to="/login">Login</router-link>
           </div>
         </div>
       </div>
@@ -66,11 +72,9 @@ export default {
   
 </script>
 
-
 <style lang="scss">
 
 .navbar {
-  padding: 0px calc((100vw - 1152px) /2);
   @media screen and (min-width: 1280px) {
     padding: 0px calc((100vw - 1152px) /2);
   }

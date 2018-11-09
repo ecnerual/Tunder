@@ -4,7 +4,13 @@
       <form  @submit="onSubmit">
         <div class="field">
           <p class="control has-icons-left has-icons-right">
-            <input v-model="email" class="input" type="email" placeholder="Email">
+            <input v-model="form.email" 
+                   v-validate="'required|email'" 
+                   class="input" 
+                   type="text" 
+                   name="email"
+                   placeholder="Email"
+                   :class="{ 'is-danger': errors.has('email'), 'is-success': fields.email && fields.email.valid }">
             <span class="icon is-small is-left">
               <i class="fas fa-envelope"></i>
             </span>
@@ -15,7 +21,7 @@
         </div>
         <div class="field">
           <p class="control has-icons-left has-icons-right">
-            <input v-model="password" class="input" type="password" placeholder="Password">
+            <input v-model="form.password" class="input" type="password" placeholder="Password">
             <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
             </span>
@@ -35,13 +41,13 @@
 
 export default {
   name: 'signUp',
-  data() {
-    return {
+  data: () => ({
+    form: {
       email: '',
-      password: '',
-      submitting: false
-    }
-  },
+      password: ''
+    },
+    submitting: false
+  }),
   methods: {
     onSubmit() {
       const { email, password } = this;
@@ -74,8 +80,16 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 1024px) {
+      width: 88%;
+    }
+
     form {
       width: 86%;
+      @media screen and (max-width: 1024px) {
+        width: 94%;
+      }
     }
   }
 }
