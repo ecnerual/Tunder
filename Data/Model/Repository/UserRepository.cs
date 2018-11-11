@@ -36,6 +36,12 @@ namespace Data.Model.Repository
             return await _dbContext.Users.AnyAsync(user => user.Email == email);
         }
 
+        public async Task<bool> UsernameExists(string userName)
+        {
+            return await _dbContext.Users.AnyAsync(user => user.UserName == userName);
+
+        }
+
         public async Task<User> CreateUser(User user)
         {
             await _dbContext.Users.AddAsync(user);

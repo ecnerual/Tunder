@@ -9,7 +9,7 @@ namespace Data.Model
 {
     public class User : ModelBase
     {
-        public string Name { get; set; }
+        public string UserName { get; set; }
         public Sexes Sex { get; set; }
         public string Email { get; set; }
         public DateTime BirthDateTime { get; set; }
@@ -27,7 +27,7 @@ namespace Data.Model
         {
             return new User()
             {
-                Name = userDto.UserName,
+                UserName = userDto.UserName,
                 Sex = userDto.Sexe,
                 Email = userDto.Email.ToLower(),
                 HashedPassword = hashedPassword,

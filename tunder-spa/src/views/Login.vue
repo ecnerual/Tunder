@@ -51,14 +51,15 @@
 <script>
 
 export default {
-  name: 'signUp',
-  data: () => ({
-    form: {
-      email: '',
-      password: '',
-      submitting: false
-    }
-  }),
+  name: 'Login',
+  data() {
+    return {
+      form: {
+        email: '',
+        password: '',
+        submitting: false
+      }
+  }},
   computed: {
     inError() {
       return Object.keys(this.fields).some(key => this.fields[key].invalid);
@@ -117,7 +118,7 @@ export default {
     justify-content: center;
 
     &.login__form {
-      height: 250px;
+      min-height: 250px;
     }
     @media screen and (max-width: 1024px) {
       width: 88%;

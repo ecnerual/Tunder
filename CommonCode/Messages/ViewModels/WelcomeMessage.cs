@@ -11,7 +11,7 @@ namespace CommonCode.Messages.ViewModels
         {
             return new WelcomeMessage()
             {
-                Name = user.Name
+                Name = user.UserName
             };
         } 
     }
