@@ -43,7 +43,7 @@ namespace Tunder.API.Controllers
         {
             userDto.Email = userDto.Email.ToLower();
 
-            if (await _userRepository.UserExists(userDto.Email))
+            if (await _userRepository.UserEmailExistsAsync(userDto.Email))
             {
                 return BadRequest();
             }

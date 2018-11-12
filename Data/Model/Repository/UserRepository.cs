@@ -31,12 +31,12 @@ namespace Data.Model.Repository
             return await _dbContext.Users.FirstOrDefaultAsync(user => user.Email == email);
         }
 
-        public async Task<bool> UserExists(string email)
+        public async Task<bool> UserEmailExistsAsync(string email)
         {
             return await _dbContext.Users.AnyAsync(user => user.Email == email);
         }
 
-        public async Task<bool> UsernameExists(string userName)
+        public async Task<bool> UsernameExistsAsync(string userName)
         {
             return await _dbContext.Users.AnyAsync(user => user.UserName == userName);
 

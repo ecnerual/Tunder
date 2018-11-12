@@ -14,9 +14,14 @@
     <EmbeddedResource Remove="wwwroot\**" />
     <None Remove="Repository\**" />
     <None Remove="wwwroot\**" />
-    <Compile Remove="Controllers\UserController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper">
+      <Version>7.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection">
+      <Version>5.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Identity">
       <Version>2.1.3</Version>
@@ -44,8 +49,5 @@
   <ItemGroup>
     <ProjectReference Include="..\CommonCode\CommonCode.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code\Factories\" />
   </ItemGroup>
 </Project>

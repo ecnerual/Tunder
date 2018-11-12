@@ -12,6 +12,7 @@ using Tunder.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using SQLitePCL;
+using Tunder.API.Tests.TestHelpers;
 
 namespace Tunder.API.Tests.Controllers
 {
@@ -58,6 +59,7 @@ namespace Tunder.API.Tests.Controllers
                 .ReturnsAsync(user);
 
             var controller = GetController();
+            controller.SetUserClaimId(Guid.NewGuid());
 
             var loginResult = await controller.Login(new LoginDto());
 
@@ -71,7 +73,7 @@ namespace Tunder.API.Tests.Controllers
         [TestMethod]
         public async Task UserAlreadyExists()
         {
-            _userRepoMock.Setup(userRepo => userRepo.UserExists(It.IsAny<string>()))
+            _userRepoMock.Setup(userRepo => userRepo.UserEmailExistsAsync(It.IsAny<string>()))
                          .ReturnsAsync(true);
 
             var controller = GetController();
@@ -86,10 +88,10 @@ namespace Tunder.API.Tests.Controllers
             var lowEmail = "yolo@lol.com";
             var upperEmail = "YoLo@lol.com";
 
-            _userRepoMock.Setup(userRepo => userRepo.UserExists(lowEmail))
+            _userRepoMock.Setup(userRepo => userRepo.UserEmailExistsAsync(lowEmail))
                          .ReturnsAsync(true);
 
-            _userRepoMock.Setup(userRepo => userRepo.UserExists(upperEmail))
+            _userRepoMock.Setup(userRepo => userRepo.UserEmailExistsAsync(upperEmail))
                          .ReturnsAsync(false);
 
             var controller = GetController();

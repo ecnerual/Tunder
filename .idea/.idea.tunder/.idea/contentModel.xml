@@ -27,7 +27,7 @@
           <e p="MessageType.cs" t="Include" />
           <e p="SendingInfo.cs" t="Include" />
           <e p="ViewModels" t="Include">
-            <e p="WelcomeMEssage.cs" t="Include" />
+            <e p="WelcomeMessage.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -42,16 +42,23 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="BusinessObject" t="Include">
           <e p="DTO" t="Include">
+            <e p="CreateMatchActionDTO.cs" t="Include" />
             <e p="LoginDto.cs" t="Include" />
-            <e p="UserDto.cs" t="Include" />
+            <e p="UserRegisterDto.cs" t="Include" />
+            <e p="UserResponseDto.cs" t="Include" />
+          </e>
+          <e p="Profile" t="Include">
+            <e p="UserProfile.cs" t="Include" />
           </e>
         </e>
         <e p="Data.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20181017214208_Init.cs" t="Include" />
-          <e p="20181017214208_Init.Designer.cs" t="Include" />
-          <e p="20181024234519_Match.cs" t="Include" />
-          <e p="20181024234519_Match.Designer.cs" t="Include" />
+          <e p="20181026003021_Init.cs" t="Include" />
+          <e p="20181026003021_Init.Designer.cs" t="Include" />
+          <e p="20181030004146_MatchesAndMAtchesActionRelations.cs" t="Include" />
+          <e p="20181030004146_MatchesAndMAtchesActionRelations.Designer.cs" t="Include" />
+          <e p="20181105214948_AddMatchDate.cs" t="Include" />
+          <e p="20181105214948_AddMatchDate.Designer.cs" t="Include" />
           <e p="TunderDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
@@ -63,16 +70,21 @@
             <e p="MatchActionStatus.cs" t="Include" />
             <e p="Sexes.cs" t="Include" />
           </e>
+          <e p="Match.cs" t="Include" />
           <e p="MatchAction.cs" t="Include" />
           <e p="ModelBase.cs" t="Include" />
           <e p="Repository" t="Include">
+            <e p="IBaseRepository.cs" t="Include" />
             <e p="IMatchActionRepository.cs" t="Include" />
+            <e p="IMatchRepository.cs" t="Include" />
             <e p="IModelBaseEntityRepository.cs" t="Include" />
             <e p="IUserRepository.cs" t="Include" />
             <e p="MatchActionRepository.cs" t="Include" />
+            <e p="MatchRepository.cs" t="Include" />
             <e p="UserRepository.cs" t="Include" />
           </e>
           <e p="User.cs" t="Include" />
+          <e p="UserMatch.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -89,6 +101,29 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Readme.md" t="Include" />
       <e p="Solution Items" t="Include" />
+      <e p="tunder-spa-ts/node_modules" t="ExcludeRecursive">
+        <e p="@types" t="IncludeRecursive">
+          <e p="chai" t="IncludeRecursive" />
+          <e p="mocha" t="IncludeRecursive" />
+        </e>
+        <e p="@vue/cli-plugin-babel" t="IncludeRecursive" />
+        <e p="@vue/cli-plugin-eslint" t="IncludeRecursive" />
+        <e p="@vue/cli-plugin-typescript" t="IncludeRecursive" />
+        <e p="@vue/cli-plugin-unit-mocha" t="IncludeRecursive" />
+        <e p="@vue/cli-service" t="IncludeRecursive" />
+        <e p="@vue/eslint-config-typescript" t="IncludeRecursive" />
+        <e p="@vue/test-utils" t="IncludeRecursive" />
+        <e p="babel-eslint" t="IncludeRecursive" />
+        <e p="chai" t="IncludeRecursive" />
+        <e p="eslint" t="IncludeRecursive" />
+        <e p="eslint-plugin-vue" t="IncludeRecursive" />
+        <e p="node-sass" t="IncludeRecursive" />
+        <e p="sass-loader" t="IncludeRecursive" />
+        <e p="vue" t="IncludeRecursive" />
+        <e p="vue-router" t="IncludeRecursive" />
+        <e p="vue-template-compiler" t="IncludeRecursive" />
+        <e p="vuex" t="IncludeRecursive" />
+      </e>
       <e p="Tunder.API" t="IncludeRecursive">
         <e p=".dockerignore" t="Include" />
         <e p=".gitignore" t="Include" />
@@ -96,11 +131,15 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Code" t="Include">
-          <e p="Factories" t="Include" />
+          <e p="Extensions" t="Include">
+            <e p="ControllerBaseExtension.cs" t="Include" />
+          </e>
         </e>
         <e p="Controllers" t="Include">
+          <e p="BaseAuthController.cs" t="Include" />
           <e p="MatchController.cs" t="Include" />
           <e p="SessionController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Dockerfile" t="Include" />
@@ -135,6 +174,7 @@
         <e p="Controllers" t="Include">
           <e p="MatchControllerTest.cs" t="Include" />
           <e p="SessionControllerTest.cs" t="Include" />
+          <e p="UserControllerTest.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -144,10 +184,17 @@
             </e>
           </e>
         </e>
+        <e p="Services" t="Include">
+          <e p="AuthServiceTest.cs" t="Include" />
+        </e>
+        <e p="TestHelpers" t="Include">
+          <e p="Extension.cs" t="Include" />
+        </e>
         <e p="Tunder.API.Tests.csproj" t="IncludeRecursive" />
       </e>
       <e p="tunder.sln" t="IncludeFlat" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_tunder.-897928070.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_tunder.-897928070.00" t="ExcludeRecursive" />
   </component>
 </project>

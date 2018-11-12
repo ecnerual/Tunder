@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 using CommonCode.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,6 +39,8 @@ namespace tunder
             //should be moved to Configuration
             services.AddDbContext<TunderDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("TunderDevDb")));
+
+            services.AddAutoMapper();
 
             services.AddMvc()
                     .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver())
