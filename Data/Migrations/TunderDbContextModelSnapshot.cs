@@ -19,36 +19,6 @@ namespace Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Data.Model.Match", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<Guid>("Guid");
-
-                    b.Property<DateTime>("MatchedSince");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Match");
-                });
-
-            modelBuilder.Entity("Data.Model.MatchAction", b =>
-                {
-                    b.Property<long>("LikerID");
-
-                    b.Property<long>("LikedID");
-
-                    b.Property<int>("Status");
-
-                    b.HasKey("LikerID", "LikedID");
-
-                    b.HasIndex("LikedID");
-
-                    b.ToTable("MatchActions");
-                });
-
             modelBuilder.Entity("Data.Model.User", b =>
                 {
                     b.Property<long>("Id")
@@ -67,54 +37,15 @@ namespace Data.Migrations
 
                     b.Property<byte[]>("HashedPassword");
 
-                    b.Property<string>("Name");
-
                     b.Property<byte[]>("Salt");
 
                     b.Property<int>("Sex");
 
+                    b.Property<string>("UserName");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Data.Model.UserMatch", b =>
-                {
-                    b.Property<long>("UserId");
-
-                    b.Property<long>("MatchId");
-
-                    b.HasKey("UserId", "MatchId");
-
-                    b.HasIndex("MatchId");
-
-                    b.ToTable("UserMatches");
-                });
-
-            modelBuilder.Entity("Data.Model.MatchAction", b =>
-                {
-                    b.HasOne("Data.Model.User", "Liked")
-                        .WithMany("MatchActionsFrom")
-                        .HasForeignKey("LikedID")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("Data.Model.User", "Liker")
-                        .WithMany("MatchActionsTo")
-                        .HasForeignKey("LikerID")
-                        .OnDelete(DeleteBehavior.SetNull);
-                });
-
-            modelBuilder.Entity("Data.Model.UserMatch", b =>
-                {
-                    b.HasOne("Data.Model.Match", "Match")
-                        .WithMany("MatchesUsers")
-                        .HasForeignKey("MatchId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Data.Model.User", "User")
-                        .WithMany("UserMatches")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

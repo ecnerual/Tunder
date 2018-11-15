@@ -78,17 +78,14 @@ namespace tunder
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
-                dbContext.Database.Migrate();
-                dbContext.Dispose();
             }
             else
             {
                 app.UseHsts();
+                app.UseHttpsRedirection();
             }
 
             app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
-            app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseMvc();
         }

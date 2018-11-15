@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(TunderDbContext))]
-    [Migration("20181026003021_Init")]
+    [Migration("20181115005610_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,19 +20,6 @@ namespace Data.Migrations
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Data.Model.MatchAction", b =>
-                {
-                    b.Property<long>("LikerID");
-
-                    b.Property<long>("LikedID");
-
-                    b.HasKey("LikerID", "LikedID");
-
-                    b.HasIndex("LikedID");
-
-                    b.ToTable("UserMatches");
-                });
 
             modelBuilder.Entity("Data.Model.User", b =>
                 {
@@ -52,28 +39,15 @@ namespace Data.Migrations
 
                     b.Property<byte[]>("HashedPassword");
 
-                    b.Property<string>("Name");
-
                     b.Property<byte[]>("Salt");
 
                     b.Property<int>("Sex");
 
+                    b.Property<string>("UserName");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Data.Model.MatchAction", b =>
-                {
-                    b.HasOne("Data.Model.User", "Liked")
-                        .WithMany("MatchActionsFrom")
-                        .HasForeignKey("LikedID")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("Data.Model.User", "Liker")
-                        .WithMany("MatchActionsTo")
-                        .HasForeignKey("LikerID")
-                        .OnDelete(DeleteBehavior.SetNull);
                 });
 #pragma warning restore 612, 618
         }

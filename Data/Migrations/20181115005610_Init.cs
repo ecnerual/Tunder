@@ -15,7 +15,7 @@ namespace Data.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Guid = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: true),
                     Sex = table.Column<int>(nullable: false),
                     Email = table.Column<string>(nullable: true),
                     BirthDateTime = table.Column<DateTime>(nullable: false),
@@ -28,42 +28,10 @@ namespace Data.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "UserMatches",
-                columns: table => new
-                {
-                    LikerID = table.Column<long>(nullable: false),
-                    LikedID = table.Column<long>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Matches", x => new { x.LikerID, x.LikedID });
-                    table.ForeignKey(
-                        name: "FK_Matches_Users_LikedID",
-                        column: x => x.LikedID,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Matches_Users_LikerID",
-                        column: x => x.LikerID,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Matches_LikedID",
-                table: "UserMatches",
-                column: "LikedID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "UserMatches");
-
             migrationBuilder.DropTable(
                 name: "Users");
         }
