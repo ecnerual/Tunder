@@ -28,9 +28,26 @@ namespace Tunder.API.Tests.Controllers
 
         private UsersController GetController()
         {
-            var controller =new UsersController(_userRepoMock.Object, _mapper.Object);
+            var controller = new UsersController(_userRepoMock.Object, _mapper.Object);
             controller.SetUserClaimId(Guid.NewGuid());
             return controller;
+        }
+
+
+        [TestMethod]
+        public async Task GetMe_NotFound()
+        {
+            User nullUser = null;
+
+            _userRepoMock.Setup(repo => repo.GetByGuidAsync(It.IsAny<Guid>()))
+                .ReturnsAsync(nullUser);
+
+            var controller = GetController();
+
+            var actionResult = await controller.GetMe();
+
+            _mapper.Verify(m => m.Map<UserResponseDto>(nullUser), Times.Never);
+            Assert.IsInstanceOfType(actionResult, typeof(NotFoundResult));
         }
 
         [TestMethod]
@@ -38,7 +55,7 @@ namespace Tunder.API.Tests.Controllers
         {
             User nullUser = null;
 
-            _userRepoMock.Setup(repo => repo.GetById(It.IsAny<long>()))
+            _userRepoMock.Setup(repo => repo.GetByGuidAsync(It.IsAny<Guid>()))
                 .ReturnsAsync(nullUser);
 
             var controller = GetController();
@@ -54,7 +71,7 @@ namespace Tunder.API.Tests.Controllers
         {
             User user = new User();
 
-            _userRepoMock.Setup(repo => repo.GetById(It.IsAny<long>()))
+            _userRepoMock.Setup(repo => repo.GetByGuidAsync(It.IsAny<Guid>()))
                 .ReturnsAsync(user);
 
             var controller = GetController();
@@ -62,7 +79,7 @@ namespace Tunder.API.Tests.Controllers
             var actionResult = await controller.GetMe();
 
             _mapper.Verify(m => m.Map<UserResponseDto>(user), Times.Once);
-            Assert.IsInstanceOfType(actionResult, typeof(OkResult));
+            Assert.IsInstanceOfType(actionResult, typeof(OkObjectResult));
         }
     }
 }

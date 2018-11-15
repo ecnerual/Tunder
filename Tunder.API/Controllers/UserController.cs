@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using Data.BusinessObject.DTO;
@@ -39,9 +40,9 @@ namespace Tunder.API.Controllers
         public async Task<IActionResult> GetMe()
         {
 
-            long userId = this.GetUserId();
+            Guid userId = this.GetUserId();
 
-            User user = await _userRepository.GetById(userId);
+            User user = await _userRepository.GetByGuidAsync(userId);
 
             if (user == null)
             {

@@ -8,11 +8,11 @@ namespace tunder.Code.Extensions
 {
     public static class ControllerBaseExtension
     {
-        public static long GetUserId(this ControllerBase controller)
+        public static Guid GetUserId(this ControllerBase controller)
         {
-            if (!long.TryParse(controller.User.FindFirst(ClaimTypes.NameIdentifier).Value, out var currentUserId))
+            if (!Guid.TryParse(controller.User.FindFirst(ClaimTypes.NameIdentifier).Value, out var currentUserId))
             {
-                currentUserId = -1;
+                currentUserId = new Guid();
             }
 
             return currentUserId;
