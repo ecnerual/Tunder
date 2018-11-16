@@ -1,4 +1,5 @@
 <template>
+<div>
   <nav class="navbar is-widescreen" role="navigation" aria-label="main navigation">
 
     <div class="navbar-brand">
@@ -42,9 +43,14 @@
       </div>
     </div>
   </nav>
+    <Notification :key="i" v-for="(notif, i) in notifications" msg="notif.msg"/>
+</div>
+
 </template>
 
 <script>
+import Notification from '@/components/layout/Notification.vue';
+import { mapState } from 'vuex';
 
 const menuLinks = [
   {
@@ -55,10 +61,18 @@ const menuLinks = [
 
 export default {
   name: 'Header',
+  components: {
+    Notification
+  },
   data() {
     return { 
       burgerActive: false
     }
+  },
+  computed: {
+    ...mapState({
+      notifications: state => state.notifications.notifications
+    })
   },
   beforeCreate() {
     this.menuLinks = menuLinks;

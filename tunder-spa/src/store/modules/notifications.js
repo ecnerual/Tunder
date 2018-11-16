@@ -19,14 +19,14 @@ const state = {
 };
 
 const mutations = {
-  [REMOVE_NOTIFICATION](id) {
-    this.state.notifications = this.state.notifications.filter(n => n.id !== id);
+  [REMOVE_NOTIFICATION](state, id) {
+    state.notifications = state.notifications.filter(n => n.id !== id);
   },
   [ADD_SUCCESS](state, payload) {
     const { msg } = payload;
 
-    this.notifications.add({
-      id: this.state.notificationCount++,
+    state.notifications.add({
+      id: state.notificationCount++,
       msg,
       type: NOTIFICATION_TYPES.success
     })
@@ -34,8 +34,8 @@ const mutations = {
   [ADD_ERROR](state, payload) {
     const { msg } = payload;
 
-    this.notifications.add({
-      id: this.state.notificationCount++,
+    state.notifications.add({
+      id: state.notificationCount++,
       msg,
       type: NOTIFICATION_TYPES.error
     })
