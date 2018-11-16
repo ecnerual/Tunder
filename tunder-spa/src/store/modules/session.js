@@ -1,13 +1,7 @@
-const axios = require('axios');
+export const SCOPE = 'session';
+import { SET_TOKEN, LOGIN, ADD_ERROR } from '@/store/mutation-types.js';
 
-export const LOGIN = 'ACTON_LOGIN';
-
-export const SET_TOKEN = 'SET_TOKEN';
-
-const types = {
-  SET_TOKEN,
-  LOGIN
-}
+import sessionApi from '@/code/services/SessionService.js';
 
 const state = {
   token: null,
@@ -15,16 +9,13 @@ const state = {
 };
 
 const actions = {
-  [LOGIN]({ commit }, payload) {
-    const { email, password } = payload; 
-    axios.post('http://localhost:35396/api/session/login', {
-      email,
-      password
-    })
-    .then(res => {
-      commit(types.SET_TOKEN, res.data.token);
-    })
-    .catch(err => console.error(err));
+  [LOGIN] (state, payload) {
+
+    sessionApi.loginUser(
+      payload,
+      (token) => state.commit(SET_TOKEN, token),
+      () => state.commit(ADD_ERROR, { msg: "rip"}, { root: true })
+    );
   }
 };
 
@@ -42,6 +33,5 @@ export default {
   state,
   getters,
   actions,
-  mutations,
-  types
+  mutations
 };

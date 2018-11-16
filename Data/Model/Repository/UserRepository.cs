@@ -53,9 +53,9 @@ namespace Data.Model.Repository
             throw new NotImplementedException();
         }
 
-        public Task<bool> SaveAsync()
+        public async Task<bool> SaveAsync()
         {
-            throw new NotImplementedException();
+            return (await _dbContext.SaveChangesAsync()) > 1;
         }
     }
 }

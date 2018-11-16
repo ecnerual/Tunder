@@ -51,7 +51,7 @@ namespace Tunder.API.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task GetMe_NotFound()
+        public async Task GetMe_NotFound2()
         {
             User nullUser = null;
 

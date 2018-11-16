@@ -1,17 +1,17 @@
 import axios from 'axios';
 import { API_URL } from '@/Configs.js';
 
-import notifications from "@/store/modules/notifications";
-
-
-function LoginApi(state, { email, password }) {
-  axios.post(`${API_URL}session/register`, {
-    email,
-    password
+function loginUser({ email, password }, onSuccess, onFailure) {
+  axios.post(`${API_URL}session/login`, {
+    data: {
+       email,
+      password
+    }
   })
-  .then(({token}) => token)
-  .catch(err => {
-    const { types } = notifications; 
-    state.commit(`notifications/types.ADD_ERROR`, { msg: "rip" });
-  });
+  .then(({ data }) => onSuccess(data.token))
+  .catch(err => onFailure(err))
+}
+
+export default {
+  loginUser
 }

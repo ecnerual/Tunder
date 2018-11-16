@@ -69,7 +69,7 @@ How to add a migration!
 How to update your DB :
 
 ```
-	dotnet ef database update  --startup-project ./Tunder/ --project ./Data/
+	dotnet ef database update  --startup-project ./Tunder.API/ --project ./Data/
 ```
 ## Deployment
 

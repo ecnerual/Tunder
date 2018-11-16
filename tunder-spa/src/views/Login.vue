@@ -2,7 +2,7 @@
   <div class="view__container login__container">
     <i class="logo fab fa-algolia fa-4x"></i>
     <div class="box is-half login__form">
-      <form  @submit="onSubmit">
+      <form  @submit.prevent="onSubmit">
         <div class="field">
           <p class="control has-icons-left has-icons-right">
             <input v-model="form.email" 
@@ -50,6 +50,9 @@
 
 <script>
 
+import { SESSION } from '@/store/scope-types.js';
+import { LOGIN } from '@/store/mutation-types.js';
+
 export default {
   name: 'Login',
   data() {
@@ -67,9 +70,9 @@ export default {
   },
   methods: {
     onSubmit() {
-      const { email, password } = this;
+      const { email, password } = this.form;
 
-      this.$store.dispatch('session/login', { 
+      this.$store.dispatch(`${SESSION}/${LOGIN}`, { 
         email, password 
       });
     }
