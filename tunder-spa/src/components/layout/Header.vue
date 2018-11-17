@@ -43,7 +43,7 @@
       </div>
     </div>
   </nav>
-    <Notification :key="i" v-for="(notif, i) in notifications" msg="notif.msg"/>
+  <Notification :key="i" v-for="(notif, i) in notifications" msg="notif.msg"/>
 </div>
 
 </template>
@@ -71,7 +71,7 @@ export default {
   },
   computed: {
     ...mapState({
-      notifications: state => state.notifications.notifications
+      notifications: state => state.notifications
     })
   },
   beforeCreate() {
