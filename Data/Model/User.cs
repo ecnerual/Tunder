@@ -17,6 +17,9 @@ namespace Data.Model
         public byte[] Salt { get; set; }
         public string AuthToken { get; set; }
         public string ActivationToken { get; set; }
+        public string ResetPasswordToken { get; set; }
+        
+        public ICollection<UserTeam> UserTeams { get; set; }
 
 
         public static User From(UserRegisterDto userDto, byte[] hashedPassword, byte[] salt)

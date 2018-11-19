@@ -3,8 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
+using Data.BusinessObject.DTO.Session;
 using Data.BusinessObject.Requests;
 using Data.Model.Repository;
 using Tunder.API.Controllers;
@@ -41,7 +43,7 @@ namespace Tunder.API.Tests.Controllers
             User user = null;
 
             _authServiceMock.Setup(authS => authS.LoginAsync(It.IsAny<string>(), It.IsAny<string>()))
-                        .ReturnsAsync(user);
+                .ReturnsAsync(user);
 
             var controller = GetController();
 
@@ -74,11 +76,11 @@ namespace Tunder.API.Tests.Controllers
         public async Task UserAlreadyExists()
         {
             _userRepoMock.Setup(userRepo => userRepo.UserEmailExistsAsync(It.IsAny<string>()))
-                         .ReturnsAsync(true);
+                .ReturnsAsync(true);
 
             var controller = GetController();
 
-            var registerResult = await controller.Register(new UserRegisterDto() { Email = "bonjourMadame" });
+            var registerResult = await controller.Register(new UserRegisterDto() {Email = "bonjourMadame"});
             Assert.IsInstanceOfType(registerResult, typeof(BadRequestResult));
         }
 
@@ -89,10 +91,10 @@ namespace Tunder.API.Tests.Controllers
             var upperEmail = "YoLo@lol.com";
 
             _userRepoMock.Setup(userRepo => userRepo.UserEmailExistsAsync(lowEmail))
-                         .ReturnsAsync(true);
+                .ReturnsAsync(true);
 
             _userRepoMock.Setup(userRepo => userRepo.UserEmailExistsAsync(upperEmail))
-                         .ReturnsAsync(false);
+                .ReturnsAsync(false);
 
             var controller = GetController();
 
@@ -107,9 +109,72 @@ namespace Tunder.API.Tests.Controllers
 
         #endregion
 
+        #region RESET_PASSWORD
+
+        [TestMethod]
+        public async Task MissingUser_404()
+        {
+            User nullUser = null;
+
+            _userRepoMock.Setup(repo => repo.GetByEmail(It.IsAny<string>()))
+                .ReturnsAsync(nullUser);
+
+            var controller = GetController();
+
+            var req = new ResetPasswordRequest();
+
+            var result = await controller.ResetPassword(req);
+
+            Assert.IsInstanceOfType(result, typeof(NotFoundResult));
+        }
+
+        [TestMethod]
+        public async Task BadResetToken_BadRequest()
+        {
+            User user = new User();
+
+            _userRepoMock.Setup(repo => repo.GetByEmail(It.IsAny<string>()))
+                .ReturnsAsync(user);
+
+            _authServiceMock.Setup(repo => repo.ResetPassword(It.IsAny<User>(), It.IsAny<string>(), It.IsAny<string>()))
+                .ReturnsAsync(false);
+
+            var controller = GetController();
+
+            var req = new ResetPasswordRequest();
+
+            var result = await controller.ResetPassword(req);
+
+            Assert.IsInstanceOfType(result, typeof(BadRequestResult));
+        }
+
+        [TestMethod]
+        public async Task GoodResetPassword_Ok()
+        {
+            User user = new User();
+
+            _userRepoMock.Setup(repo => repo.GetByEmail(It.IsAny<string>()))
+                .ReturnsAsync(user);
+
+            _authServiceMock.Setup(repo => repo.ResetPassword(It.IsAny<User>(), It.IsAny<string>(), It.IsAny<string>()))
+                .ReturnsAsync(true);
+
+            var controller = GetController();
+
+            var req = new ResetPasswordRequest();
+
+            var result = await controller.ResetPassword(req);
+
+            Assert.IsInstanceOfType(result, typeof(OkResult));
+        }
+
+        #endregion
+
+
         private SessionController GetController()
         {
-            return new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object, _notificationServiceMock.Object);
+            return new SessionController(_authServiceMock.Object, _userRepoMock.Object, _config.Object,
+                _notificationServiceMock.Object);
         }
     }
 }

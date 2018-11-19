@@ -20,5 +20,14 @@ namespace Tunder.API.Services
 
             return await Task.Run(() => true);
         }
+
+        public async Task<bool> SendResetPasswordAsync(User user)
+        {
+            var confirmEmail = new MessageBuilder<WelcomeMessage>(user, WelcomeMessage.From(user))
+                .SendAsEmail("title")
+                .GetInstance();
+            
+            return await Task.Run(() => true);
+        }
     }
 }

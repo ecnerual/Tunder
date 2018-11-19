@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using CommonCode.Code.Builders;
 using CommonCode.Helpers;
 using CommonCode.Messages.ViewModels;
+using Data.BusinessObject.DTO;
+using Data.BusinessObject.DTO.Session;
 using Data.BusinessObject.Requests;
 using Data.Model;
 using Microsoft.AspNetCore.Http;
@@ -51,7 +53,7 @@ namespace Tunder.API.Controllers
             User user = await _authService.RegisterAsync(userDto);
 
             await _notificationService.SendWelcomeMessageAsync(user);
-            
+
             return Created("user/me", user);
         }
 
@@ -67,7 +69,8 @@ namespace Tunder.API.Controllers
                 return Unauthorized();
             }
 
-            Claim[] claims = {
+            Claim[] claims =
+            {
                 new Claim(ClaimTypes.NameIdentifier, user.Guid.ToString()),
                 new Claim(ClaimTypes.Email, user.Email)
             };
@@ -91,6 +94,47 @@ namespace Tunder.API.Controllers
             {
                 token = tokenHandler.WriteToken(token)
             });
+        }
+
+
+        [HttpGet("resetPassword")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> SendResetPasswordEmail(string email)
+        {
+            User user = await _userRepository.GetByEmail(email);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            await _authService.ResetPasswordToken(user);
+            await _notificationService.SendResetPasswordAsync(user);
+
+            return NoContent();
+        }
+
+        [HttpPost("resetPassword")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> ResetPassword(ResetPasswordRequest req)
+        {
+            User user = await _userRepository.GetByEmail(req.email);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            bool reset = await _authService.ResetPassword(user, req.resetToken, req.password);
+
+            if (!reset)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
         }
 
         /*

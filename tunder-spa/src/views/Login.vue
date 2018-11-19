@@ -83,57 +83,57 @@ export default {
 
 <style lang="scss">
 
-.field.is-grouped.login__btn-group {
-  justify-content: flex-end;
-}
-
-.forgot-password__container {
-  text-align: right;
-  .link {
-    font-size: 0.75rem;
-  }
-}
-
-.login__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  .logo {
-    font-size: 5em;
-    margin-bottom: 10px;
+  .field.is-grouped.login__btn-group {
+    justify-content: flex-end;
   }
 
-  .box {
-    padding: 1rem;
+  .forgot-password__container {
+    text-align: right;
+    .link {
+      font-size: 0.75rem;
+    }
   }
 
-  .button {
-    width: 100%;
-  }
-
-  .is-half {
-    width: 50%;
-    max-width: 350px;
+  .login__container {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
-    &.login__form {
-      min-height: 250px;
-    }
-    @media screen and (max-width: 1024px) {
-      width: 88%;
+    .logo {
+      font-size: 5em;
+      margin-bottom: 10px;
     }
 
-    form {
-      width: 86%;
+    .box {
+      padding: 1rem;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .is-half {
+      width: 50%;
+      max-width: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.login__form {
+        min-height: 250px;
+      }
       @media screen and (max-width: 1024px) {
-        width: 94%;
+        width: 88%;
+      }
+
+      form {
+        width: 86%;
+        @media screen and (max-width: 1024px) {
+          width: 94%;
+        }
       }
     }
-  }
 }
 
 </style>

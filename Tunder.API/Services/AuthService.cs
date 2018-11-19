@@ -54,6 +54,27 @@ namespace Tunder.API.Services
             return user;
         }
 
+        public async Task<string> ResetPasswordToken(User user)
+        {
+            user.ResetPasswordToken = CryptoHelpers.GetSalt().ToString();
+
+            await _userRepository.SaveAsync();
+
+            return user.ResetPasswordToken;
+        }
+
+        public async Task<bool> ResetPassword(User user, string token, string newPassword)
+        {
+            if (user.ResetPasswordToken != token)
+            {
+                return await Task.Run(() => false);
+            }
+
+            user.HashedPassword = CryptoHelpers.HashPassword(newPassword, CryptoHelpers.GetSalt());
+
+            return await _userRepository.SaveAsync();
+        }
+
         public Task<User> Logout(string email, string password)
         {
             throw new System.NotImplementedException();

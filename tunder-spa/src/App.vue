@@ -4,16 +4,19 @@
     <div class="container is-widescreen">
       <router-view/>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from '@/components/layout/Header.vue'
+import Footer from '@/components/layout/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Footer
   }
 }
   

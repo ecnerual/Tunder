@@ -31,7 +31,8 @@ const mutations = {
       msg,
       type: NOTIFICATION_TYPES.error
     })
-  }
+  },
+  
 };
 
 const getters = {};

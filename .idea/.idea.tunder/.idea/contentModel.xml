@@ -25,6 +25,7 @@
           <e p="MessageType.cs" t="Include" />
           <e p="SendingInfo.cs" t="Include" />
           <e p="ViewModels" t="Include">
+            <e p="ResetPassword.cs" t="Include" />
             <e p="WelcomeMessage.cs" t="Include" />
           </e>
         </e>
@@ -42,6 +43,9 @@
           <e p="DTO" t="Include">
             <e p="CreateMatchActionDTO.cs" t="Include" />
             <e p="LoginDto.cs" t="Include" />
+            <e p="Session" t="Include">
+              <e p="ResetPasswordRequest.cs" t="Include" />
+            </e>
             <e p="UserRegisterDto.cs" t="Include" />
             <e p="UserResponseDto.cs" t="Include" />
           </e>
@@ -71,7 +75,9 @@
             <e p="IUserRepository.cs" t="Include" />
             <e p="UserRepository.cs" t="Include" />
           </e>
+          <e p="Team.cs" t="Include" />
           <e p="User.cs" t="Include" />
+          <e p="UserTeam.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

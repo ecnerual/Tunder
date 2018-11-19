@@ -1,18 +1,17 @@
-﻿using System.Reflection.Emit;
 using Data.Model;
 
 namespace CommonCode.Messages.ViewModels
 {
-    public class WelcomeMessage
+    public class ResetPassword
     {
         public string Name { get; set; }
 
-        public static WelcomeMessage From(User user)
+        public static ResetPassword From(User user)
         {
-            return new WelcomeMessage
+            return new ResetPassword
             {
                 Name = user.UserName
             };
-        } 
+        }
     }
 }
