@@ -6,5 +6,7 @@ namespace Data.Model
     {
         public ICollection<UserTeam> UserTeams { get; set; }
         public string Name { get; set; }
+        public User Admin { get; set; }
+        public string Description { get; set; }
     }
 }
